@@ -1,0 +1,148 @@
+{
+    "billingAddress": {
+        "zip": "00000-000",
+        "city": "São Paulo",
+        "state": "SP",
+        "number": "333",
+        "status": "ACTIVE",
+        "country": "Brasil",
+        "address1": "Rua Oscar Freire",
+        "name": "Renato Pereira"
+    },
+    "customer": {
+        "email": "renato.pereira@email.com",
+        "name": "Renato Pereira",
+        "telephone": {
+            "number": "(11) 98376-6343"
+        }
+    },
+    "id": "22071559",
+    "payments": [
+        {
+            "type": "CREDIT_CARD",
+            "brand": "VISA",
+            "amount": 500,
+            "installments": "1",
+            "expiresAt": "02/23",
+            "number": "**** **** **** 3455"
+        }
+    ],
+    "pointOfSale": "E-commerce",
+    "status": "PENDING",
+    "totals": {
+        "subtotal": 500.00,
+        "freightCosts": 20.00,
+        "discount": 10.00,
+        "total": 510.00
+    },
+    "placedAt": "2019-02-05T19:30:00.000Z",
+    "createdAt": "2019-02-05T19:30:00.000Z",
+    "updatedAt": "2019-02-05T19:30:00.000Z",
+    "fulfillments": {
+        "F1": {
+            "id": "F1",
+            "locationId": "359",
+            "shipment": {
+                "zip": "00000-000",
+                "city": "São Paulo",
+                "state": "SP",
+                "number": "333",
+                "status": "ACTIVE",
+                "country": "Brasil",
+                "address1": "Rua Oscar Freire",
+                "name": "Renato Pereira",
+                "telephone": {
+                    "type": "billing",
+                    "number": "(11) 98376-6343"
+                }
+            },
+            "status": "DELIVERED",
+            "type": "SHIPMENT",
+            "createdAt": "2019-02-05T19:30:00.000Z",
+            "updatedAt": "2019-02-05T19:30:00.000Z",
+            "freightCosts": {
+                "totalTime": 11,
+                "totalPrice": 10.00,
+                "deliveryEstimatedDate": "2019-03-05T19:30:00.000Z"
+            },
+            "processedAt": "2019-03-05T19:30:00.000Z",
+            "locationType": "Own Store",
+            "items": {
+                "AR384675": {
+                    "sku": "AR384675",
+                    "quantity": 2,
+                    "stockType": "PHYSICAL",
+                    "name": "Tenis Coca Coca Loretto - Feminino",
+                    "size": "39",
+                    "color": "Branco, Cinza",
+                    "image": "http://image.url",
+                    "price": 100.00
+                },
+                "AR384677": {
+                    "sku": "AR384677",
+                    "quantity": 1,
+                    "stockType": "PHYSICAL",
+                    "name": "Tênis New Balance ML501 - Masculino",
+                    "size": "40",
+                    "color": "Preto",
+                    "image": "http://image.url",
+                    "price": 100.00
+                }
+            }
+        },
+        "F2": {
+            "id": "F2",
+            "locationId": "567",
+            "shipment": {
+                "zip": "00000-000",
+                "city": "São Paulo",
+                "state": "SP",
+                "number": "333",
+                "status": "ACTIVE",
+                "country": "Brasil",
+                "address1": "Rua Oscar Freire",
+                "name": "Renato Pereira",
+                "telephone": {
+                    "type": "billing",
+                    "number": "(11) 98376-6343"
+                }
+            },
+            "status": "PENDING",
+            "type": "SHIPMENT",
+            "createdAt": "2019-02-05T19:30:00.000Z",
+            "updatedAt": "2019-10-24T13:03:05.000Z",
+            "freightCosts": {
+                "totalTime": 11,
+                "totalPrice": 10.00,
+                "deliveryEstimatedDate": "2019-04-05T19:30:00.000Z"
+            },
+
+            "processedAt": "2019-10-24T13:02:12.000Z",
+            "locationType": "Own Store",
+            "items": {
+                "TN35568798": {
+                    "sku": "TN35568798",
+                    "quantity": 1,
+                    "stockType": "PHYSICAL",
+                    "name": "Tênis Nike Air Max LTD 3 - Masculino",
+                    "size": "39",
+                    "color": "preto/cinza",
+                    "image": "http://image.url",
+                    "acquisitionType": "PURCHASE",
+                    "price": 100.00
+                },
+                "TC587879785": {
+                    "sku": "TC587879785",
+                    "quantity": 1,
+                    "stockType": "PHYSICAL",
+                    "name": "Tênis Nike Shox R4 - Masculino",
+                    "size": "40",
+                    "color": "preto/cinza",
+                    "image": "http://image.url",
+                    "acquisitionType": "PURCHASE",
+                    "price": 100.00
+                }
+            }
+        }
+    }
+}
