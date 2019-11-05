@@ -1,0 +1,32 @@
+body {
+    background: #f5f5f5;
+    color: #fff;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.content {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.headerBar {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: #463c3c;
+    margin: 0 auto;
+    border-bottom: 1px solid #CCC;
+    height: 90px;
+    box-sizing: content-box;
+}
+
+.orderBorder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 360px;
+    height: 90px;
+    border-right: 1px solid #CCC;
+}
