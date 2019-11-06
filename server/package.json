@@ -1,0 +1,17 @@
+{
+  "name": "server-linximpulse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexandre Dias <alexandrermd@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "eslint": "^5.16.0",
+    "express": "^4.16.4"
+  }
+}

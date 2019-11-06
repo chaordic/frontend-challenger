@@ -1,0 +1,4 @@
+server/node_modules
+server/package-lock.json
+fe/node_modules
+fe/package-lock.json
