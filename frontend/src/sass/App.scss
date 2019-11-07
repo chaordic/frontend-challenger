@@ -1,0 +1,86 @@
+@import "variables.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+  }
+   
+  html, body {
+    min-height: 100%;
+  }
+
+body {
+    background: #f5f5f536;
+    overflow: hidden;
+}
+
+.content {
+    width: $container-width;
+    margin: 0 auto;
+}
+
+
+.headerBar {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: #463c3c;
+    margin: 0 auto;
+    border-bottom: $border $borderColor;
+    height: $headeHeight;
+    box-sizing: content-box;
+
+    .orderBorder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 360px;
+        height: $headeHeight;
+        border-right: $border $borderColor;
+    }
+}
+
+.contentHeader {
+    margin: 10px 0;
+
+    nav {
+        display: flex;
+        width: 100%;
+        float: left;
+        margin: 0 80px;
+    }
+
+    nav div {
+        margin-right: 70px;
+        height: 100px;
+    }
+
+    nav span.dataHeader {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    nav div:nth-child(3) {
+        margin: 0;
+    }
+
+    h3 {
+        color: $ordertitle;
+        margin-bottom: 20px;
+    }
+}
+
+.deliveries {
+    span {
+        margin-right: 10px;
+        border: 1px solid #ddd;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid $colorDelivery;
+        color: $colorDelivery;
+    }
+}
+
+

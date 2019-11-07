@@ -1,12 +1,15 @@
 const express = require('express');
 const bodyParser =  require('body-parser');
 
+const cors = require('cors');
+
 // criar uma instacia do express
 const app = express()
 
 // Usamos para servir o nosso arquivo .json
 const fils =  require('fs');
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
