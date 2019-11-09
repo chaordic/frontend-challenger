@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1573059520656" clover="3.2.0">
+  <project timestamp="1573059520657" name="All files">
+    <metrics statements="8" coveredstatements="8" conditionals="24" coveredconditionals="23" methods="4" coveredmethods="2" elements="36" coveredelements="33" complexity="0" loc="8" ncloc="8" packages="2" files="2" classes="2">
+      <package name="CepContainer">
+        <metrics statements="4" coveredstatements="4" conditionals="24" coveredconditionals="23" methods="2" coveredmethods="1"/>
+        <file name="CepContainer.js" path="/Users/diasalexandre/codes/jobs/luizalabs/fe/src/components/CepContainer/CepContainer.js">
+          <metrics statements="4" coveredstatements="4" conditionals="24" coveredconditionals="23" methods="2" coveredmethods="1"/>
+          <line num="5" count="1" type="stmt"/>
+          <line num="6" count="4" type="stmt"/>
+          <line num="49" count="1" type="stmt"/>
+          <line num="56" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="SearchContainer">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <file name="SearchContainer.js" path="/Users/diasalexandre/codes/jobs/luizalabs/fe/src/components/SearchContainer/SearchContainer.js">
+          <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="5" count="1" type="stmt"/>
+          <line num="25" count="1" type="stmt"/>
+          <line num="33" count="1" type="stmt"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>
