@@ -44,7 +44,7 @@ config.plugins = [
   }),
   new webpack.DefinePlugin({
     'process.env': {
-      LUIZALABS_VERSION: JSON.stringify(require('./package.json').version), // eslint-disable-line
+      LINXIMPULSE_VERSION: JSON.stringify(require('./package.json').version), // eslint-disable-line
     },
   }),
   new webpack.optimize.UglifyJsPlugin({
