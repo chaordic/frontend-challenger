@@ -6,6 +6,10 @@ import {
   fetchOrder,
   toggleShip,
 } from './actions';
+import { formatAddress } from '../../utils';
+import ClientInfo from '../../components/ClientInfo/ClientInfo';
+import PaymentInfo from '../../components/PaymentInfo/PaymentInfo';
+import OrderComponent from '../../components/OrderComponent/OrderComponent';
 
 class AppContainer extends Component {
   componentDidMount = () => {
@@ -26,6 +30,9 @@ class AppContainer extends Component {
 
     return (
       <Fragment>
+
+        <h1>Tratamento de entregas</h1>
+
         <div>
           <p>Pedido</p>
           <span>{order.id}</span>
@@ -45,16 +52,23 @@ class AppContainer extends Component {
           </div>
         }
 
-        {order.customer !== undefined &&
-          <div>
-            <span>{order.customer.name}</span>
-            <span>{order.customer.email}</span>
-            {order.customer.telephone &&
-              <span>{order.customer.telephone.number}</span>
-            }
-          </div>
-        }
+        <ClientInfo
+          customer={order.customer}
+          billingAddress={order.billingAddress}
+          fulfillments={order.fulfillments}
+          formatAddress={formatAddress}
+        />
 
+        <PaymentInfo
+          payments={order.payments}
+          totals={order.totals}
+        />
+
+        <OrderComponent
+          fulfillments={order.fulfillments}
+          pointOfSale={order.pointOfSale}
+          createdAt={order.createdAt}
+        />
       </Fragment>
 
     );

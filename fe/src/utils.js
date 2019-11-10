@@ -4,16 +4,40 @@
  * @param value Value inserted by user
  * @return {String} formatted by rules of cep (postal code in Brazil)
  */
-export const cepMask = value => (
-  value
-    .replace(/\D/g, '')
-    .replace(/(\d{5})(\d)/, '$1-$2')
-    .replace(/(-\d{3})\d+?$/, '$1')
-);
+export const formatAddress = (objectAddress) => {
+  let address = '';
+
+  if (objectAddress.address1 !== undefined && objectAddress.number !== undefined) {
+    address =
+      address.concat(objectAddress.address1).concat(', ').concat(objectAddress.number);
+  }
+
+  if (objectAddress.city !== undefined) {
+    address =
+      address.concat(' ').concat(objectAddress.city);
+  }
+
+  if (objectAddress.state !== undefined) {
+    address =
+      address.concat(' - ').concat(objectAddress.state);
+  }
+
+  if (objectAddress.zip !== undefined) {
+    address =
+      address.concat(' - ').concat(objectAddress.zip);
+  }
+
+  if (objectAddress.country !== undefined) {
+    address =
+      address.concat(' - ').concat(objectAddress.country);
+  }
+
+  return address;
+};
 
 /**
  * Export all functions utils (mainaly used in all project)
  */
 export default {
-  cepMask,
+  formatAddress,
 };
