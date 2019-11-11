@@ -3,7 +3,7 @@ import { call, put, select } from 'redux-saga/effects';
 import { requestOrder } from './api';
 import {
   distinctPlaces,
-  formatFullDate,
+  formatDate,
   formatCash,
   formatFulfillments,
   formatPayments,
@@ -11,7 +11,7 @@ import {
 import C from './constants';
 
 /**
- * Trigged when Cep Request is demmanded
+ * Trigged when Order is requested and all format is necessary to store
 */
 function* fetchOrder() {
   try {
@@ -19,54 +19,54 @@ function* fetchOrder() {
 
     const response = yield call(requestOrder, id);
 
-    try {
-      const totals = { };
-
-      Object.keys(response.data.totals).forEach((e) => {
-        totals[e] = formatCash(response.data.totals[e]);
-      });
-
-      yield put({
-        type: C.SET_TOTALS_SUCCESS,
-        data: totals,
-      });
-    } catch (e) {
-      yield put({
-        type: C.SET_TOTALS_ERROR,
-      });
-    }
-
-    try {
-      const fulfillments = formatFulfillments(response.data.fulfillments);
-
-      yield put({
-        type: C.SET_FULFILLMENTS_SUCCESS,
-        data: fulfillments,
-      });
-    } catch (e) {
-      yield put({
-        type: C.SET_FULFILLMENTS_ERROR,
-      });
-    }
-
-    try {
-      const payments = formatPayments(response.data.payments);
-
-      yield put({
-        type: C.SET_PAYMENT_SUCCESS,
-        data: payments,
-      });
-    } catch (e) {
-      yield put({
-        type: C.SET_PAYMENT_ERROR,
-      });
-    }
-
     if (response.status === 200 && response.data) {
+      try {
+        const totals = { };
+
+        Object.keys(response.data.totals).forEach((e) => {
+          totals[e] = formatCash(response.data.totals[e]);
+        });
+
+        yield put({
+          type: C.SET_TOTALS_SUCCESS,
+          data: totals,
+        });
+      } catch (e) {
+        yield put({
+          type: C.SET_TOTALS_ERROR,
+        });
+      }
+
+      try {
+        const fulfillments = formatFulfillments(response.data.fulfillments);
+
+        yield put({
+          type: C.SET_FULFILLMENTS_SUCCESS,
+          data: fulfillments,
+        });
+      } catch (e) {
+        yield put({
+          type: C.SET_FULFILLMENTS_ERROR,
+        });
+      }
+
+      try {
+        const payments = formatPayments(response.data.payments);
+
+        yield put({
+          type: C.SET_PAYMENT_SUCCESS,
+          data: payments,
+        });
+      } catch (e) {
+        yield put({
+          type: C.SET_PAYMENT_ERROR,
+        });
+      }
+
       yield put({
         type: C.SET_ORDER_SUCCESS,
         data: response.data,
-        created: formatFullDate(response.data.createdAt),
+        created: formatDate(response.data.createdAt),
       });
 
       yield put({
@@ -103,10 +103,8 @@ function* toggleShip(data) {
   });
 }
 
-
 function* getAppData() {
   yield takeLatest(C.FETCH_ORDER_REQUEST, fetchOrder);
-
   yield takeLatest(C.TOGGLE_SHIP, toggleShip);
 }
 

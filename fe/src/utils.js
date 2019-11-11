@@ -1,8 +1,8 @@
 /**
- * Insert and force certain rules to cep (postal code in Brazil)
+ * Insert object with fiels to human format to address
  *
- * @param value Value inserted by user
- * @return {String} formatted by rules of cep (postal code in Brazil)
+ * @param {Object} address Formatted Address with better visualizarion
+ * @return {String} formatted by rules of better format
  */
 export const formatAddress = (objectAddress) => {
   let address = '';
@@ -36,10 +36,10 @@ export const formatAddress = (objectAddress) => {
 };
 
 /**
- * Insert and force certain rules to cep (postal code in Brazil)
+ * Array of objects to format your address and return in array all distinc addresses
  *
- * @param value Value inserted by user
- * @return {String} formatted by rules of cep (postal code in Brazil)
+ * @param {Array} values Objects with all informations about address unformatted could be equals
+ * @return {Array} Array with distinct formatted addresses
  */
 export const distinctPlaces = (values) => {
   const dicShipping = { };
@@ -55,10 +55,10 @@ export const distinctPlaces = (values) => {
 };
 
 /**
- * Insert and force certain rules to cep (postal code in Brazil)
+ * Based in number 0-11 return in Portuguese what month related
  *
- * @param value Value inserted by user
- * @return {String} formatted by rules of cep (postal code in Brazil)
+ * @param {Number} m Month in number starting of zero
+ * @return {String} Name of the month
  */
 export const monthsName = (m) => {
   const months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
@@ -67,25 +67,14 @@ export const monthsName = (m) => {
 };
 
 /**
- * Insert and force certain rules to cep (postal code in Brazil)
+ * Format day format if just have one digit
  *
- * @param value Value inserted by user
- * @return {String} formatted by rules of cep (postal code in Brazil)
- */
-export const formatFullDate = (date) => {
-  const formattedDate = new Date(date) || new Date().now();
-
-  return `${formattedDate.getDate()} de ${monthsName(formattedDate.getMonth())} de ${formattedDate.getFullYear()}, às ${formattedDate.getHours()}h${formattedDate.getMinutes()}`;
-};
-
-/**
- * Insert and force certain rules to cep (postal code in Brazil)
- *
- * @param value Value inserted by user
- * @return {String} formatted by rules of cep (postal code in Brazil)
+ * @param {Number} d Day/month
+ * @return {String} Day/Month formatted for better visualization
  */
 export const formatDay = (d) => {
-  if (d.toString().length > 2) {
+
+  if (d.toString().length > 1) {
     return d;
   }
 
@@ -93,35 +82,40 @@ export const formatDay = (d) => {
 };
 
 /**
- * Insert and force certain rules to cep (postal code in Brazil)
+ * Format date of necessary to better visualization
  *
- * @param value Value inserted by user
- * @return {String} formatted by rules of cep (postal code in Brazil)
+ * @param {String} date Date saved in string using global pattern
+ * @param {Bool} full What format should be returned
+ * @return {String} Date formatted
  */
-export const formatMinimumDate = (date) => {
+export const formatDate = (date, full = true) => {
   const formattedDate = new Date(date) || new Date().now();
+
+  if (full) {
+    return `${formattedDate.getDate()} de ${monthsName(formattedDate.getMonth())} de ${formattedDate.getFullYear()}, às ${formattedDate.getHours()}h${formattedDate.getMinutes()}`;
+  }
 
   return `${formatDay(formattedDate.getDay())}/${formatDay(formattedDate.getMonth() + 1)}/${formattedDate.getFullYear()}`;
 };
 
 /**
- * Insert and force certain rules to cep (postal code in Brazil)
+ * Format cash values to brazilian currency values
  *
- * @param value Value inserted by user
- * @return {String} formatted by rules of cep (postal code in Brazil)
+ * @param {Number} value Value (mainly price of one thing)
+ * @return {String} Price with currency coin and formatted for better visualizartion
  */
-export const formatCash = (value) => {
+export const formatCash = (value, currency = 'R$') => {
   const p = value.toFixed(2).split('.');
-  return `R$${p[0].split('').reverse().reduce((acc, num, i) => (
+  return `${currency}${p[0].split('').reverse().reduce((acc, num, i) => (
     num === '-' ? acc : num + (i && !(i % 3) ? ',' : '') + acc
   ), '')},${p[1]}`;
 };
 
 /**
- * Insert and force certain rules to cep (postal code in Brazil)
+ * Format object fulfillment and your inside objects/array
  *
- * @param value Value inserted by user
- * @return {String} formatted by rules of cep (postal code in Brazil)
+ * @param {Array} fulfillments Array of fulfillments
+ * @return {Array} Array with formatted fulfillments
  */
 export const formatFulfillments = fulfillments => (
   Object.values(fulfillments).map((e) => {
@@ -132,9 +126,10 @@ export const formatFulfillments = fulfillments => (
       totalPrice: 0,
       total: 0,
     };
-    e.updatedAt = formatMinimumDate(e.updatedAt);
-    e.createdAt = formatMinimumDate(e.createdAt);
-    e.processedAt = formatMinimumDate(e.processedAt);
+
+    e.updatedAt = formatDate(e.updatedAt, false);
+    e.createdAt = formatDate(e.createdAt, false);
+    e.processedAt = formatDate(e.processedAt, false);
     e.open = true;
 
     e.formattedAddress = formatAddress(e.shipment);
@@ -142,7 +137,7 @@ export const formatFulfillments = fulfillments => (
     e.freight = { };
 
     e.freight.deliveryEstimatedDate =
-      formatMinimumDate(e.freightCosts.deliveryEstimatedDate);
+      formatDate(e.freightCosts.deliveryEstimatedDate, false);
     e.freight.totalPrice =
       formatCash(e.freightCosts.totalPrice);
 
@@ -166,6 +161,12 @@ export const formatFulfillments = fulfillments => (
   })
 );
 
+/**
+ * Format sets of payments and return array formatted
+ *
+ * @param {Array} payments Array of payments
+ * @return {Array} Array with formatted payments
+ */
 export const formatPayments = payments => (
   Object.values(payments).map((p) => {
     const e = p;
@@ -176,14 +177,33 @@ export const formatPayments = payments => (
 );
 
 /**
+ * Format to portuguese shop status
+ *
+ * @param {String} status Status in english
+ * @return {String} Status in portuguese
+ */
+export const statusConvert = (status) => {
+  const statusPtBr = {
+    PENDING: 'PENDENTE',
+    SHIPMENT: 'ENVIADO',
+    DELIVERED: 'ENTREGUE',
+    ACTIVE: 'ATIVO',
+    PHYSICAL: 'FÍSICO',
+    PURCHASE: 'COMPRA',
+  };
+
+  return statusPtBr[status];
+};
+
+/**
  * Export all functions utils (mainaly used in all project)
  */
 export default {
   formatAddress,
   distinctPlaces,
-  formatFullDate,
-  formatMinimumDate,
+  formatDate,
   formatCash,
   formatFulfillments,
   formatPayments,
+  statusConvert,
 };

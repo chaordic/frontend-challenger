@@ -72,7 +72,6 @@ const ShipTableItems = ({ items, geral }) => (
         ))}
       </tbody>
 
-
       <tfoot>
         <tr className={styles.tr}>
           <td />

@@ -9,7 +9,7 @@ const render = (Component, props = {}) => {
     <AppContainer>
       <Component {...props} />
     </AppContainer>
-, document.getElementById('app'));
+    , document.getElementById('app'));
 };
 
 render(App);
