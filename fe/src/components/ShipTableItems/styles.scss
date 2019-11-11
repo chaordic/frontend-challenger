@@ -1,0 +1,23 @@
+@import '../../global-styles/settings.global.scss';
+
+
+.table {
+    display: grid;
+    grid-column-gap: 1rem;
+    grid-template-columns: 1fr;
+}
+
+.tr td:last-child {
+    border-bottom: 1px solid #ccc;
+}
+
+.tr {
+    display: grid;
+    grid-column-gap: 1rem;
+    grid-template-columns: 3fr 1fr 1fr 2fr;
+    padding: 10px 20px 0 20px;
+}
+
+.background {
+    background-color: #f8f8f8;
+}

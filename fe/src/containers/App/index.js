@@ -6,9 +6,8 @@ import {
   fetchOrder,
   toggleShip,
 } from './actions';
-import { formatAddress } from '../../utils';
+import HeaderShip from '../../components/HeaderShip/HeaderShip';
 import ClientInfo from '../../components/ClientInfo/ClientInfo';
-import PaymentInfo from '../../components/PaymentInfo/PaymentInfo';
 import OrderComponent from '../../components/OrderComponent/OrderComponent';
 
 class AppContainer extends Component {
@@ -21,53 +20,39 @@ class AppContainer extends Component {
   /**
    * Trigged when user want to clear and close CepContainer
   */
-  onCloseCep = () => {
-    this.props.toggleShip();
+  onToggleShip = (id) => {
+    this.props.toggleShip(id);
   }
 
   render() {
-    const { order } = this.props;
+    const { order, fulfillments, customer, billingAddress, payments, totals } = this.props;
 
     return (
       <Fragment>
 
-        <h1>Tratamento de entregas</h1>
+        <header>
+          <h1>Tratamento de entregas</h1>
+        </header>
 
-        <div>
-          <p>Pedido</p>
-          <span>{order.id}</span>
-        </div>
-
-        <div>
-          <p>Status</p>
-          <span>{order.status}</span>
-        </div>
-
-        {order.fulfillments !== undefined &&
-          <div>
-            <p>Entrega relacionadas</p>
-            {Object.values(order.fulfillments).map(e => (
-              <span key={e.id}>{e.id}</span>
-            ))}
-          </div>
-        }
-
-        <ClientInfo
-          customer={order.customer}
-          billingAddress={order.billingAddress}
-          fulfillments={order.fulfillments}
-          formatAddress={formatAddress}
+        <HeaderShip
+          order={order}
+          fulfillments={fulfillments}
         />
 
-        <PaymentInfo
-          payments={order.payments}
-          totals={order.totals}
+        <ClientInfo
+          customer={customer}
+          billingAddress={billingAddress}
+          fulfillments={fulfillments}
+          payments={payments}
+          totals={totals}
         />
 
         <OrderComponent
-          fulfillments={order.fulfillments}
+          id={order.id}
+          fulfillments={fulfillments.items}
           pointOfSale={order.pointOfSale}
           createdAt={order.createdAt}
+          onToggle={this.onToggleShip}
         />
       </Fragment>
 
@@ -80,19 +65,34 @@ AppContainer.propTypes = {
   toggleShip: func,
   match: object,
   order: object,
+  fulfillments: object,
+  billingAddress: object,
+  customer: object,
+  payments: object,
+  totals: object,
 };
 
 AppContainer.defaultProps = {
   toggleShip: () => {},
   match: {},
   order: {},
+  fulfillments: {},
+  customer: {},
+  billingAddress: {},
+  payments: {},
+  totals: {},
 };
 
 function mapStateToProps(state, ownProps) {
-  const { order } = state.app;
+  const { order, fulfillments, customer, billingAddress, payments, totals } = state.app;
   return {
     ...ownProps,
     order,
+    customer,
+    billingAddress,
+    fulfillments,
+    payments,
+    totals,
   };
 }
 

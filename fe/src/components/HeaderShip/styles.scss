@@ -1,0 +1,22 @@
+@import '../../global-styles/settings.global.scss';
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 16%);
+    grid-column-gap: 10px;
+    margin: 10px 20px;
+}
+
+.title {
+    color: #798896;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: sans-serif;
+    padding: 0 0 5px 0;
+    text-align: left;
+}
+
+.info {
+    text-align: left;
+    color: #000;
+}

@@ -1,0 +1,16 @@
+@import '../../global-styles/settings.global.scss';
+
+.ship-related {
+    padding: 5px;
+    color: var(--green);
+    text-decoration: none;
+    width: 30px;
+    text-align: center;
+    height: 20px;
+    color: var(--green);
+    border: 1px solid var(--green);
+    border-radius: 3px;
+    cursor: pointer;
+    float: left;
+    margin-right: 5px;
+}

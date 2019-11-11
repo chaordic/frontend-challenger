@@ -1,0 +1,21 @@
+@import '../../global-styles/settings.global.scss';
+
+.main {
+    display: grid;
+    grid-column-gap: 1rem;
+    margin: 10px 20px;
+    grid-template-columns: 4fr 3fr;
+}
+
+.main > article {
+    padding: 20px;
+    -webkit-box-shadow: var(--shadow);
+    -moz-box-shadow: var(--shadow);
+    box-shadow: var(--shadow);
+}
+
+.main > article > h1 {
+    padding: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: 500;
+}

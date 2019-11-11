@@ -1,39 +1,54 @@
-import React from 'react';
-import { string, object } from 'prop-types';
+import React, { Fragment } from 'react';
+import { string, array, func } from 'prop-types';
+import cssModules from 'react-css-modules';
 import ShipDetails from '../ShipDetails/ShipDetails';
 
-const OrderComponent = ({ pointOfSale, fulfillments, createdAt }) => (
-  <section>
-    <h1>Dados do pedido</h1>
-    {createdAt !== undefined &&
-      <div>
-        <p>Comprado em</p>
-        <p>{createdAt}</p>
-      </div>
-    }
+import styles from './styles.scss';
 
-    {pointOfSale !== undefined &&
-      <div>
-        <p>Ponto de venda</p>
-        <p>{pointOfSale}</p>
-      </div>
-    }
+const OrderComponent = ({ pointOfSale, fulfillments, createdAt, id, onToggle }) => (
+  <Fragment>
+    <section className={styles.main}>
+      <h1>Dados do pedido</h1>
+      <article>
+        {createdAt !== undefined &&
+          <section>
+            <p className={styles.addressTitle}>Comprado em</p>
+            <p className={styles.address}>{createdAt}</p>
+          </section>
+        }
 
+        {pointOfSale !== undefined &&
+          <section>
+            <p className={styles.addressTitle}>Ponto de venda</p>
+            <p className={styles.address}>{pointOfSale}</p>
+          </section>
+        }
+      </article>
+    </section>
     {fulfillments !== undefined && Object.values(fulfillments).map(f => (
       <ShipDetails
+        id={id}
         fulfillment={f}
+        onToggle={onToggle}
       />
     ))}
-  </section>
+  </Fragment>
 );
 
 OrderComponent.propTypes = {
-  pointOfSale: string.isRequired,
-  createdAt: string.isRequired,
-  fulfillments: object.isRequired,
+  id: string,
+  pointOfSale: string,
+  createdAt: string,
+  fulfillments: array,
+  onToggle: func,
 };
 
 OrderComponent.defaultProps = {
+  id: '',
+  createdAt: '',
+  pointOfSale: '',
+  fulfillments: [],
+  onToggle: () => {},
 };
 
-export default OrderComponent;
+export default cssModules(OrderComponent, styles, { allowMultiple: true });

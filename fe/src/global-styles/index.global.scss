@@ -1,13 +1,4 @@
-/**
- * All based colors used
- */
-:root {
-  --white: #FFFFFF;
-  --black: #172241;
-  --gray: #EEEEEE;
-  --gray-dark: #f4f7f6;
-  --blue: #1a73e8;
-}
+@import './settings.global.scss';
 
 body, html {
   font-family: sans-serif;
@@ -18,87 +9,42 @@ body, html {
   background-color: var(--white);
 }
 
+header {
+  display: flex;
+  height: 80px;
+  border-bottom: 1px solid #ccc;
+}
+
+header > h1 {
+  display: flex;
+  padding: 5px 10px;
+  height: 70px;
+  color: #444;
+  font-weight: 600;
+  width: 32%;  
+  font-size: 18px;
+  align-items: center;
+  text-align: left;
+  border-right: 1px solid #ccc;
+}
+
 * {
   margin: 0;
   padding: 0;
-}
-
-/**
- * Container of leaflet project to show map
- */
-.leaflet-container {
-  height: 300px;
-  width: 100%;
-}
-
-header button {
-  width: 100px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  background-color: var(--blue);
-  color: #fff;
-  height: 36px;
-  font-weight: 500;
-  letter-spacing: .25px;
-  padding: 0 24px;
-  text-shadow: none;
-  text-transform: none;
-  outline: none;
-}
-
-header button:disabled {
-  opacity: 0.5;
 }
 
 ul {
   list-style-type: none;
 }
 
-p {
-  color: var(--black);
-}
-
-h3 {
-  font-size: 1rem;
-  width: 100%;
-  color: var(--black);
-  font-weight: bold;
-  padding: 0 0 15px 0;
-  text-align: left;
-}
-
 .flex-container {
   display: flex;
   flex-flow: row wrap;
-  text-align: center;
   max-width: 1400px;
-  margin: 2rem auto;
 }
 
 .flex-container > * {
-  padding: 15px;
   flex: 1 100%;
-}
-
-header {
-  max-width: 65%;
-  padding: 3% 5%;
-  margin: 0 auto;
-  background-color: var(--gray);
-}
-
-header > div {
-  display: flex;
-}
-
-header > div > p {
-  padding-top: 8px;
-  padding-right: 10px;
-}
-
-header > div > button {
-  margin-left: 10px;
 }
 
 input[type=text] {
@@ -118,27 +64,6 @@ input[type=text] {
 input:hover, input:focus {
   transition: all .2s ease;
   cursor: auto;
-}
-
-article {
-  max-width: 65%;
-  padding: 3% 5%;
-  margin: 10px auto;
-  border: 4px solid var(--gray-dark);
-  text-align: left;
-  position: relative;
-}
-
-article > button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 22px;
-  background-color: transparent;
-  border: none;
-  outline: none;
 }
 
 @media (max-width: 620px) {
