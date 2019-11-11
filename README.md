@@ -1,8 +1,34 @@
-# OMS challenger
+# OMS Challenge - Alexandre Dias
+
+## Description
+
+> Challenge from Linx Impulse OMS Team to show informations about ship.
+> Two parts are important here: backend and frontend
+
+## Objective
+
+Create a server and one web interface for access ship informations
+
+## Application flow
+
+1. When page is loaded all ship information are presented.
+2. User can click to expand ship details.
+
+## Requirements
+
+Make sure all dependencies have been installed before moving on:
+
+- [Node.js](http://nodejs.org/) >= v8.11.3
+
+## Steps
+
+1. First of all, enter in server folder, install all dependencies and start server. Will run in port 6060.
+2. Go to fe folder and install dependencies, after this npm start and react will start server in port 3000.
+
+
+# OMS challenger Instructions
 
 O objetivo é construir uma página de tratamento de entregas, à partir de uma api utilizando express que responda ao arquivo `pedido.json`. O layout deverá ficar o mais próximo possivel da tela `Tratamento de entregas.pdf`.
-
-
 
 ### Instruções
 
@@ -14,7 +40,7 @@ O objetivo é construir uma página de tratamento de entregas, à partir de uma 
 
 ## O que iremos avaliar
 
-* Extrutura dos componentes.
+* Estrutura dos componentes.
 * Organização do código.
 * Fidelidade com o pdf.
 * Porcentagem do layout desenvolvido.
