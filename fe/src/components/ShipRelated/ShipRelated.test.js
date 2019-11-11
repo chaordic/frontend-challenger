@@ -3,8 +3,8 @@ import renderer from 'react-test-renderer';
 import ShipRelated from './ShipRelated';
 
 const props = {
-  formatAddress: jest.fn(),
-  availableButton: true,
+  onClick: jest.fn(),
+  id: 'F1',
 };
 
 describe('(Component) ShipRelated', () => {

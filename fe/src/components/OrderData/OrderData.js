@@ -1,5 +1,5 @@
 import React from 'react';
-import { object } from 'prop-types';
+import { object, array } from 'prop-types';
 
 const OrderData = ({ payments, totals }) => (
   <section>
@@ -24,8 +24,8 @@ const OrderData = ({ payments, totals }) => (
 
     <div>
       <h1>Método de pagamento</h1>
-      {payments !== undefined && payments.map(payment => (
-        <p>
+      {payments !== undefined && payments.map((payment, i) => (
+        <p key={i}>
           {payment.brand !== undefined &&
             payment.brand
           }
@@ -49,11 +49,13 @@ const OrderData = ({ payments, totals }) => (
 );
 
 OrderData.propTypes = {
-  payments: object.isRequired,
-  totals: object.isRequired,
+  payments: array,
+  totals: object,
 };
 
 OrderData.defaultProps = {
+  payments: [],
+  totals: {},
 };
 
 export default OrderData;

@@ -1,25 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1573059520656" clover="3.2.0">
-  <project timestamp="1573059520657" name="All files">
-    <metrics statements="8" coveredstatements="8" conditionals="24" coveredconditionals="23" methods="4" coveredmethods="2" elements="36" coveredelements="33" complexity="0" loc="8" ncloc="8" packages="2" files="2" classes="2">
-      <package name="CepContainer">
-        <metrics statements="4" coveredstatements="4" conditionals="24" coveredconditionals="23" methods="2" coveredmethods="1"/>
-        <file name="CepContainer.js" path="/Users/diasalexandre/codes/jobs/luizalabs/fe/src/components/CepContainer/CepContainer.js">
-          <metrics statements="4" coveredstatements="4" conditionals="24" coveredconditionals="23" methods="2" coveredmethods="1"/>
+<coverage generated="1573513332991" clover="3.2.0">
+  <project timestamp="1573513332991" name="All files">
+    <metrics statements="35" coveredstatements="31" conditionals="87" coveredconditionals="59" methods="17" coveredmethods="10" elements="139" coveredelements="100" complexity="0" loc="35" ncloc="35" packages="7" files="7" classes="7">
+      <package name="ClientInfo">
+        <metrics statements="6" coveredstatements="4" conditionals="27" coveredconditionals="4" methods="3" coveredmethods="1"/>
+        <file name="ClientInfo.js" path="/Users/diasalexandre/codes/jobs/linx/fe/src/components/ClientInfo/ClientInfo.js">
+          <metrics statements="6" coveredstatements="4" conditionals="27" coveredconditionals="4" methods="3" coveredmethods="1"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="29" count="0" type="stmt"/>
+          <line num="89" count="0" type="stmt"/>
+          <line num="119" count="1" type="stmt"/>
+          <line num="127" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="HeaderShip">
+        <metrics statements="5" coveredstatements="5" conditionals="7" coveredconditionals="6" methods="2" coveredmethods="2"/>
+        <file name="HeaderShip.js" path="/Users/diasalexandre/codes/jobs/linx/fe/src/components/HeaderShip/HeaderShip.js">
+          <metrics statements="5" coveredstatements="5" conditionals="7" coveredconditionals="6" methods="2" coveredmethods="2"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="29" count="2" type="stmt"/>
+          <line num="37" count="1" type="stmt"/>
+          <line num="42" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="OrderComponent">
+        <metrics statements="5" coveredstatements="4" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="1"/>
+        <file name="OrderComponent.js" path="/Users/diasalexandre/codes/jobs/linx/fe/src/components/OrderComponent/OrderComponent.js">
+          <metrics statements="5" coveredstatements="4" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="1"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="29" count="0" type="stmt"/>
+          <line num="38" count="1" type="stmt"/>
+          <line num="46" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="OrderData">
+        <metrics statements="5" coveredstatements="5" conditionals="20" coveredconditionals="20" methods="2" coveredmethods="2"/>
+        <file name="OrderData.js" path="/Users/diasalexandre/codes/jobs/linx/fe/src/components/OrderData/OrderData.js">
+          <metrics statements="5" coveredstatements="5" conditionals="20" coveredconditionals="20" methods="2" coveredmethods="2"/>
+          <line num="4" count="1" type="stmt"/>
           <line num="5" count="1" type="stmt"/>
-          <line num="6" count="4" type="stmt"/>
-          <line num="49" count="1" type="stmt"/>
+          <line num="28" count="1" type="stmt"/>
+          <line num="51" count="1" type="stmt"/>
           <line num="56" count="1" type="stmt"/>
         </file>
       </package>
-      <package name="SearchContainer">
+      <package name="ShipDetails">
+        <metrics statements="5" coveredstatements="4" conditionals="25" coveredconditionals="21" methods="3" coveredmethods="1"/>
+        <file name="ShipDetails.js" path="/Users/diasalexandre/codes/jobs/linx/fe/src/components/ShipDetails/ShipDetails.js">
+          <metrics statements="5" coveredstatements="4" conditionals="25" coveredconditionals="21" methods="3" coveredmethods="1"/>
+          <line num="8" count="2" type="stmt"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="109" count="2" type="stmt"/>
+          <line num="115" count="2" type="stmt"/>
+        </file>
+      </package>
+      <package name="ShipRelated">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <file name="SearchContainer.js" path="/Users/diasalexandre/codes/jobs/luizalabs/fe/src/components/SearchContainer/SearchContainer.js">
+        <file name="ShipRelated.js" path="/Users/diasalexandre/codes/jobs/linx/fe/src/components/ShipRelated/ShipRelated.js">
           <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-          <line num="4" count="1" type="stmt"/>
-          <line num="5" count="1" type="stmt"/>
-          <line num="25" count="1" type="stmt"/>
-          <line num="33" count="1" type="stmt"/>
+          <line num="6" count="2" type="stmt"/>
+          <line num="7" count="3" type="stmt"/>
+          <line num="17" count="2" type="stmt"/>
+          <line num="22" count="2" type="stmt"/>
+        </file>
+      </package>
+      <package name="ShipTableItems">
+        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <file name="ShipTableItems.js" path="/Users/diasalexandre/codes/jobs/linx/fe/src/components/ShipTableItems/ShipTableItems.js">
+          <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+          <line num="13" count="3" type="stmt"/>
+          <line num="14" count="2" type="stmt"/>
+          <line num="27" count="3" type="cond" truecount="2" falsecount="0"/>
+          <line num="127" count="3" type="stmt"/>
+          <line num="132" count="3" type="stmt"/>
         </file>
       </package>
     </metrics>

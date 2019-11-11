@@ -1,4 +1,22 @@
 /**
+ * Format to portuguese shop status
+ *
+ * @param {String} status Status in english
+ * @return {String} Status in portuguese
+ */
+export const convertStatus = (status) => {
+  const statusPtBr = {
+    PENDING: 'PENDENTE',
+    SHIPMENT: 'ENVIADO',
+    DELIVERED: 'ENTREGUE',
+    ACTIVE: 'ATIVO',
+    PHYSICAL: 'FÍSICO',
+    PURCHASE: 'COMPRA',
+  };
+
+  return statusPtBr[status];
+};
+/**
  * Insert object with fiels to human format to address
  *
  * @param {Object} address Formatted Address with better visualizarion
@@ -73,7 +91,6 @@ export const monthsName = (m) => {
  * @return {String} Day/Month formatted for better visualization
  */
 export const formatDay = (d) => {
-
   if (d.toString().length > 1) {
     return d;
   }
@@ -127,6 +144,9 @@ export const formatFulfillments = fulfillments => (
       total: 0,
     };
 
+    e.status = convertStatus(e.status);
+    e.type = convertStatus(e.type);
+
     e.updatedAt = formatDate(e.updatedAt, false);
     e.createdAt = formatDate(e.createdAt, false);
     e.processedAt = formatDate(e.processedAt, false);
@@ -177,25 +197,6 @@ export const formatPayments = payments => (
 );
 
 /**
- * Format to portuguese shop status
- *
- * @param {String} status Status in english
- * @return {String} Status in portuguese
- */
-export const statusConvert = (status) => {
-  const statusPtBr = {
-    PENDING: 'PENDENTE',
-    SHIPMENT: 'ENVIADO',
-    DELIVERED: 'ENTREGUE',
-    ACTIVE: 'ATIVO',
-    PHYSICAL: 'FÍSICO',
-    PURCHASE: 'COMPRA',
-  };
-
-  return statusPtBr[status];
-};
-
-/**
  * Export all functions utils (mainaly used in all project)
  */
 export default {
@@ -205,5 +206,5 @@ export default {
   formatCash,
   formatFulfillments,
   formatPayments,
-  statusConvert,
+  convertStatus,
 };

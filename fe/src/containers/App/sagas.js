@@ -7,6 +7,7 @@ import {
   formatCash,
   formatFulfillments,
   formatPayments,
+  convertStatus,
 } from '../../utils';
 import C from './constants';
 
@@ -63,6 +64,7 @@ function* fetchOrder() {
         });
       }
 
+      response.data.status = convertStatus(response.data.status);
       yield put({
         type: C.SET_ORDER_SUCCESS,
         data: response.data,
@@ -91,6 +93,11 @@ function* fetchOrder() {
   }
 }
 
+/**
+ * Toggle fulfillment by user trigger
+ *
+ * @param {Object} data Object with id of fulfillment
+ */
 function* toggleShip(data) {
   const { fulfillments } = yield select(state => state.app);
   const idxFulfillment = fulfillments.items.findIndex(e => e.id === data.params);

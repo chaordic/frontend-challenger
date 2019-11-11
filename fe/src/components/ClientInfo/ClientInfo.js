@@ -9,7 +9,7 @@ const ClientInfo = ({ customer, billingAddress, fulfillments, totals, payments }
     <article>
       <h1>Dados do cliente</h1>
       {customer !== undefined &&
-        <section>
+        <section key="client-data">
           <p className={styles.p}>{customer.name}</p>
           <p className={styles.p}>{customer.email}</p>
           {customer.telephone &&
@@ -19,15 +19,15 @@ const ClientInfo = ({ customer, billingAddress, fulfillments, totals, payments }
       }
 
       {billingAddress !== undefined &&
-        <section>
+        <section key="billing-data">
           <h4 className={styles.addressTitle}>Endereço de cobrança</h4>
           <p className={styles.address}>{billingAddress.formattedAddress}</p>
 
           <h4 className={styles.addressTitle}>Endereço de entrega</h4>
 
-          {fulfillments.shipPlaces.map(place => (
+          {fulfillments.shipPlaces.map((place, i) => (
             <p
-              key={place}
+              key={`${place}-${i}`}
               className={styles.address}
             >
               {place}

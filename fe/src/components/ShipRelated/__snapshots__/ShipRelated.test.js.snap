@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Component) ShipRelated should render an ShipRelated with result 1`] = `
+<a
+  href="#shipItem-F1"
+  onClick={[MockFunction]}
+>
+  F1
+</a>
+`;

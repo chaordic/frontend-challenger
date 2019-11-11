@@ -14,10 +14,12 @@
 
 .fulfillmentClose {
     display: none;
+    transition: all 0.3s ease; 
 }
 
 .fulfillmentOpen {
     display: block;
+    transition: all 0.3s ease; 
 }
 
 .menu section {
@@ -36,6 +38,7 @@
     box-shadow: var(--shadow);
     padding: 20px;
     margin: 0 20px 10px 20px;
+    transition: all 0.3s ease; 
 }
 
 .main > article {

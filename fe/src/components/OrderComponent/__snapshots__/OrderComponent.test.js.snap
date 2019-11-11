@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Component) OrderComponent should render an OrderComponent with result 1`] = `
+<section>
+  <h1>
+    Dados do pedido
+  </h1>
+  <article>
+    <section>
+      <p>
+        Comprado em
+      </p>
+      <p>
+        
+      </p>
+    </section>
+    <section>
+      <p>
+        Ponto de venda
+      </p>
+      <p>
+        
+      </p>
+    </section>
+  </article>
+</section>
+`;

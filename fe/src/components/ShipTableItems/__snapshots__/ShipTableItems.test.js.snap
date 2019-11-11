@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Component) ShipTableItems should render an ShipTableItems with result 1`] = `
+Array [
+  <h1>
+    Detalhes da entrega
+  </h1>,
+  <table>
+    <thead
+      className="undefined"
+    >
+      <tr>
+        <td>
+          PRODUTO
+        </td>
+        <td>
+          SKU
+        </td>
+        <td>
+          QTD.
+        </td>
+        <td>
+          PREÇO
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        className="undefined "
+      >
+        <td>
+          <img
+            alt="Tenis Coca Coca Loretto - Feminino"
+            src="http://image.url"
+            title="Tenis Coca Coca Loretto - Feminino"
+          />
+          <section>
+            <p
+              className="undefined"
+            >
+              Tenis Coca Coca Loretto - Feminino
+            </p>
+            <p
+              className="undefined"
+            >
+              Branco, Cinza, 39
+            </p>
+          </section>
+        </td>
+        <td>
+          <p
+            className="undefined"
+          >
+            AR384675
+          </p>
+        </td>
+        <td>
+          <p
+            className="undefined"
+          >
+            2
+          </p>
+        </td>
+        <td>
+          <section>
+            <p>
+              Subtotal:
+            </p>
+            <p
+              className="undefined undefined"
+            >
+              R$100,00
+            </p>
+            <p>
+              Frete:
+            </p>
+            <p
+              className="undefined undefined"
+            >
+              R$100,00
+            </p>
+            <p>
+              Valor total:
+            </p>
+            <p
+              className="undefined undefined"
+            >
+              R$100,00
+            </p>
+          </section>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td />
+        <td />
+        <td />
+        <td>
+          <p
+            className="undefined undefined"
+          >
+            3
+             unidades de 
+            2
+             items
+          </p>
+          <section>
+            <p>
+              Subtotal:
+            </p>
+            <p
+              className="undefined undefined"
+            >
+              R$200,00
+            </p>
+            <p>
+              Frete total:
+            </p>
+            <p
+              className="undefined undefined"
+            >
+              R$0,00
+            </p>
+            <p>
+              Valor total:
+            </p>
+            <p
+              className="undefined undefined"
+            >
+              R$200,00
+            </p>
+          </section>
+        </td>
+      </tr>
+    </tfoot>
+  </table>,
+]
+`;

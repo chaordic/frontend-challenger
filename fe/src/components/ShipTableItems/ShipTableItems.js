@@ -3,6 +3,13 @@ import { array, object } from 'prop-types';
 import cssModules from 'react-css-modules';
 import styles from './styles.scss';
 
+/**
+ * Format to portuguese shop status
+ *
+ * @param {Array} items Products
+ * @param {Object} geral Object with consolidate data by items
+ * @return {Component} Table of products
+ */
 const ShipTableItems = ({ items, geral }) => (
   <Fragment>
     <h1>Detalhes da entrega</h1>
@@ -17,21 +24,22 @@ const ShipTableItems = ({ items, geral }) => (
       </thead>
       <tbody>
         {items.map((item, i) => (
-          <tr className={`${styles.tr} ${(i + 1) % 2 === 0 ? `${styles.background}` : ''}`}>
-            <td>
+          <tr key={i} className={`${styles.tr} ${(i + 1) % 2 === 0 ? `${styles.background}` : ''}`}>
+            <td className={styles.mainProduct}>
               <img
                 alt={item.name}
                 title={item.name}
                 src={item.image}
               />
+              <section>
+                <p className={`${styles.address}`}>
+                  {item.name}
+                </p>
 
-              <p className={`${styles.address}`}>
-                {item.name}
-              </p>
-
-              <p className={`${styles.address}`}>
-                {item.desc}
-              </p>
+                <p className={`${styles.address}`}>
+                  {item.desc}
+                </p>
+              </section>
 
             </td>
             <td>

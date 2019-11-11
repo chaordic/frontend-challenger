@@ -1,0 +1,295 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Component) ShipDetails should render an ShipDetails with result 1`] = `
+Array [
+  <section
+    id="shipItem-F1"
+  >
+    <button
+      onClick={[Function]}
+    >
+      <i
+        className="undefined undefined"
+      />
+    </button>
+    <section>
+      <p
+        className="undefined undefined"
+      >
+        Entrega F1
+      </p>
+      <p
+        className="undefined"
+      >
+        245-F1
+      </p>
+    </section>
+    <section>
+      <p>
+        Status da entrega
+      </p>
+      <p
+        className="undefined undefined"
+      >
+        ENVIADO
+      </p>
+    </section>
+  </section>,
+  <section
+    className="undefined undefined"
+  >
+    <h1>
+      Dados da entrega
+    </h1>
+    <article>
+      <section>
+        <p>
+          Modalidade
+        </p>
+        <p>
+          Own Store
+        </p>
+      </section>
+      <section>
+        <p>
+          Data Previsão Cliente
+        </p>
+        <p>
+          02/03/2019
+        </p>
+      </section>
+      <section>
+        <p>
+          Endereço de entrega
+        </p>
+        <p>
+          Rua Oscar Freire, 333 São Paulo - SP - 00000-000 - Brasil
+        </p>
+      </section>
+      <section>
+        <p>
+          Tipo
+        </p>
+        <p>
+          ENVIADO
+        </p>
+      </section>
+      <section>
+        <p>
+          Preço do frete
+        </p>
+        <p>
+          R$10,00
+        </p>
+      </section>
+      <section>
+        <p>
+          Data Previsão Transportadora
+        </p>
+        <p>
+          02/03/2019
+        </p>
+      </section>
+    </article>
+    <hr />
+    <h1>
+      Detalhes da entrega
+    </h1>
+    <table>
+      <thead
+        className="undefined"
+      >
+        <tr>
+          <td>
+            PRODUTO
+          </td>
+          <td>
+            SKU
+          </td>
+          <td>
+            QTD.
+          </td>
+          <td>
+            PREÇO
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          className="undefined "
+        >
+          <td>
+            <img
+              alt="Tenis Coca Coca Loretto - Feminino"
+              src="http://image.url"
+              title="Tenis Coca Coca Loretto - Feminino"
+            />
+            <section>
+              <p
+                className="undefined"
+              >
+                Tenis Coca Coca Loretto - Feminino
+              </p>
+              <p
+                className="undefined"
+              >
+                Branco, Cinza, 39
+              </p>
+            </section>
+          </td>
+          <td>
+            <p
+              className="undefined"
+            >
+              AR384675
+            </p>
+          </td>
+          <td>
+            <p
+              className="undefined"
+            >
+              2
+            </p>
+          </td>
+          <td>
+            <section>
+              <p>
+                Subtotal:
+              </p>
+              <p
+                className="undefined undefined"
+              >
+                R$100,00
+              </p>
+              <p>
+                Frete:
+              </p>
+              <p
+                className="undefined undefined"
+              >
+                R$100,00
+              </p>
+              <p>
+                Valor total:
+              </p>
+              <p
+                className="undefined undefined"
+              >
+                R$100,00
+              </p>
+            </section>
+          </td>
+        </tr>
+        <tr
+          className="undefined undefined"
+        >
+          <td>
+            <img
+              alt="Tênis New Balance ML501 - Masculino"
+              src="http://image.url"
+              title="Tênis New Balance ML501 - Masculino"
+            />
+            <section>
+              <p
+                className="undefined"
+              >
+                Tênis New Balance ML501 - Masculino
+              </p>
+              <p
+                className="undefined"
+              >
+                Preto, 40
+              </p>
+            </section>
+          </td>
+          <td>
+            <p
+              className="undefined"
+            >
+              AR384677
+            </p>
+          </td>
+          <td>
+            <p
+              className="undefined"
+            >
+              1
+            </p>
+          </td>
+          <td>
+            <section>
+              <p>
+                Subtotal:
+              </p>
+              <p
+                className="undefined undefined"
+              >
+                R$100,00
+              </p>
+              <p>
+                Frete:
+              </p>
+              <p
+                className="undefined undefined"
+              >
+                R$100,00
+              </p>
+              <p>
+                Valor total:
+              </p>
+              <p
+                className="undefined undefined"
+              >
+                R$100,00
+              </p>
+            </section>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td />
+          <td />
+          <td />
+          <td>
+            <p
+              className="undefined undefined"
+            >
+              3
+               unidades de 
+              2
+               items
+            </p>
+            <section>
+              <p>
+                Subtotal:
+              </p>
+              <p
+                className="undefined undefined"
+              >
+                R$200,00
+              </p>
+              <p>
+                Frete total:
+              </p>
+              <p
+                className="undefined undefined"
+              >
+                R$0,00
+              </p>
+              <p>
+                Valor total:
+              </p>
+              <p
+                className="undefined undefined"
+              >
+                R$200,00
+              </p>
+            </section>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </section>,
+]
+`;

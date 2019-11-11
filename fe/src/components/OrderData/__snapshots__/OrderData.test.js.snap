@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Component) OrderData should render an OrderData with result 1`] = `
+<section>
+  <h1>
+    Dados do pagamento
+  </h1>
+  <div>
+    <p>
+      Subtotal: 
+      R$500,00
+    </p>
+    <p>
+      Frete: 
+      R$20,00
+    </p>
+    <p>
+      Desconto: 
+      R$10,00
+    </p>
+    <p>
+      Valor total: 
+      R$10,00
+    </p>
+  </div>
+  <hr />
+  <div>
+    <h1>
+      Método de pagamento
+    </h1>
+    <p>
+      VISA
+      **** **** **** 3455
+       Exp. 02/23 
+       1x de R$R$500,00
+    </p>
+  </div>
+</section>
+`;

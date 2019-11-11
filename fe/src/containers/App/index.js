@@ -11,6 +11,9 @@ import ClientInfo from '../../components/ClientInfo/ClientInfo';
 import OrderComponent from '../../components/OrderComponent/OrderComponent';
 
 class AppContainer extends Component {
+  /**
+   * When component should be open data need searched
+  */
   componentDidMount = () => {
     const { id } = this.props.match;
 
@@ -18,7 +21,7 @@ class AppContainer extends Component {
   }
 
   /**
-   * Trigged when user want to clear and close CepContainer
+   * Trigged when user want toggle ShipDetail
   */
   onToggleShip = (id) => {
     this.props.toggleShip(id);
@@ -29,7 +32,6 @@ class AppContainer extends Component {
 
     return (
       <Fragment>
-
         <header>
           <h1>Tratamento de entregas</h1>
         </header>

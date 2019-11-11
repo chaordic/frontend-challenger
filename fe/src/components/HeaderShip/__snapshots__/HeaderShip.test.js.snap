@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Component) HeaderShip should render an HeaderShip with result 1`] = `
+<section>
+  <article>
+    <h3>
+      Pedido
+    </h3>
+    <p>
+      22071559
+    </p>
+  </article>
+  <article>
+    <h3>
+      Status
+    </h3>
+    <p
+      className="undefined undefined"
+    >
+      PENDENTE
+    </p>
+  </article>
+  <article>
+    <h3>
+      Entregas relacionadas
+    </h3>
+    <a
+      href="#shipItem-F1"
+      onClick={[Function]}
+    >
+      F1
+    </a>
+    <a
+      href="#shipItem-F2"
+      onClick={[Function]}
+    >
+      F2
+    </a>
+  </article>
+</section>
+`;

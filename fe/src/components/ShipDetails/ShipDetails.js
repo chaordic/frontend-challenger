@@ -8,7 +8,9 @@ import styles from './styles.scss';
 const ShipDetails = ({ id, fulfillment, onToggle }) => (
   <Fragment>
     <section className={styles.menu} id={`shipItem-${fulfillment.id}`}>
-      <button onClick={e => onToggle(fulfillment.id, e)} />
+      <button onClick={e => onToggle(fulfillment.id, e)}>
+        <i className={`${styles.angle} ${fulfillment.open ? styles.down : styles.up}`} />
+      </button>
       <section>
         <p className={`${styles.addressTitle} ${styles.green}`}>
           {`Entrega ${fulfillment.id}`}
@@ -22,7 +24,7 @@ const ShipDetails = ({ id, fulfillment, onToggle }) => (
         <p className={styles.addressTitle}>
           Status da entrega
         </p>
-        <p className={`${styles.address}`}>
+        <p className={`${styles.address} ${fulfillment.type && styles[fulfillment.type.toLowerCase()]}`}>
           {fulfillment.type}
         </p>
       </section>

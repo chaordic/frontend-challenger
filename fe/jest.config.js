@@ -12,5 +12,6 @@ module.exports = {
   moduleDirectories: ['node_modules', 'src'],
   transform: {
     '^.+\\.js$': 'babel-jest',
+    '.+\\.(css|styl|less|sass|scss)$': 'jest-transform-css',
   },
 };

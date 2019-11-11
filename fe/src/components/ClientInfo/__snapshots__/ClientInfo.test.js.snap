@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Component) ClientInfo should render an ClientInfo with result 1`] = `
+<section>
+  <article>
+    <h1>
+      Dados do cliente
+    </h1>
+  </article>
+  <article>
+    <h1>
+      Dados do pagamento
+    </h1>
+    <hr />
+    <section>
+      <h1>
+        Método de pagamento
+      </h1>
+    </section>
+  </article>
+</section>
+`;
