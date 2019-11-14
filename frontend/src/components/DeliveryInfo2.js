@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { chevron_left } from 'material-ui/icons';
 
-class DeliveryInfos extends Component {
+class DeliveryInfo2 extends Component {
 
     container = React.createRef();
     state = {
@@ -57,19 +58,19 @@ class DeliveryInfos extends Component {
                 <div className="" key={index}>
 
                     <div className="elemntUi" ref={this.container}>
-                    
+                    <i _ngcontent-qtj-c19="" class="material-icons icon-image-preview">chevron_left</i>
                     <button type="button" className="btn" onClick={this.handleButtonClick}></button>
             
                         <div>
-                            <p className="delivC">Entrega {entry.fulfillments.F1.id}</p>
-                            <p>{entry.id} - {entry.fulfillments.F1.id}</p>
+                            <p className="delivC">Entrega {entry.fulfillments.F2.id}</p>
+                            <p>{entry.id} - {entry.fulfillments.F2.id}</p>
                         </div>
 
                         <div className="statusOrder">
                             <h2>Status da Entrega</h2> 
                             <div className="statusColumn">
-                                <span className="dotStatus2"></span>
-                                <p className="dataHeader">{entry.fulfillments.F1.status}</p>
+                                <span className="dotStatus3"></span>
+                                <p className="dataHeader">{entry.fulfillments.F2.status}</p>
                             </div>
                         </div>
                     </div>
@@ -87,7 +88,7 @@ class DeliveryInfos extends Component {
                             </div>
                             <div>
                                 <h2>Modalidade</h2>
-                                <p>{entry.fulfillments.F1.locationType}</p>
+                                <p>{entry.fulfillments.F2.locationType}</p>
                             </div>
                             <div>
                                 <h2>Data Previsão Cliente</h2>
@@ -134,4 +135,4 @@ class DeliveryInfos extends Component {
     }
 }
 
-export default DeliveryInfos;
+export default DeliveryInfo2;

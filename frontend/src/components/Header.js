@@ -26,27 +26,30 @@ class Header extends Component {
         
         const result = data.map((entry, index) => {
             return ( 
-                <div className="contentHeader" key={index}>
-                    <nav className="content">
+                <li className="contentHeader" key={index}>
+                    
                         <div>
                             <h3>Pedido</h3>
-                            <span className="dataHeader">{entry.id}</span>
+                            <p className="dataHeader">{entry.id}</p>
                         </div>
 
                         <div className="statusOrder">
                             <h3>Status Pedido</h3>
-                            <span className="dataHeader">{entry.status}</span>
+                            <div className="statusColumn"> 
+                                <span className="dotStatus"></span>
+                                <p className="dataHeader">{entry.status}</p>
+                            </div>
                         </div>
 
                         <div>
                             <h3>Entregas relacionadas</h3>
                             <div className="deliveries">
-                                <span className="dataHeader">{entry.fulfillments.F1.id}</span>
-                                <span className="dataHeader">{entry.fulfillments.F2.id}</span>
+                                <p className="dataHeader">{entry.fulfillments.F1.id}</p>
+                                <p className="dataHeader">{entry.fulfillments.F2.id}</p>
                             </div>
                         </div>
-                    </nav>
-                </div>  
+                    
+                </li>  
             ) 
         })
 
@@ -58,7 +61,7 @@ class Header extends Component {
                     <div className="orderBorder">
                         <h2>Tratamento de entregas</h2>
                     </div>
-                    <>{result}</>
+                    <ul>{result}</ul>
                 </div>
             </>
         );
