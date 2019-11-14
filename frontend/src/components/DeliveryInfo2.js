@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { chevron_left } from 'material-ui/icons';
 
 class DeliveryInfo2 extends Component {
 
@@ -58,7 +57,6 @@ class DeliveryInfo2 extends Component {
                 <div className="" key={index}>
 
                     <div className="elemntUi" ref={this.container}>
-                    <i _ngcontent-qtj-c19="" class="material-icons icon-image-preview">chevron_left</i>
                     <button type="button" className="btn" onClick={this.handleButtonClick}></button>
             
                         <div>
