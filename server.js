@@ -4,12 +4,13 @@ const path = require("path");
 const build_path = path.resolve(__dirname, "dist");
 const app = express();
 
-const PORT =  3000;
+const PORT = 3000;
 
 app.use(express.static(build_path));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(build_path, "index.html"));
+app.get("/api/delivery", (req, res) => {
+  res.setHeader("Content-Type", "application/json");
+  res.end(JSON.stringify(require("./pedido.json"), null, 3));
 });
 
 app.listen(PORT);
