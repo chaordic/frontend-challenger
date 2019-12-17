@@ -1,11 +1,29 @@
 .header {
-  border: $border;
-  display: flex;
-  font-weight: bolder;
+  .breadcrumb {
+    border: $border;
+    display: flex;
+    font-weight: bolder;
+
+    .item {
+      border-right: $border;
+      padding: $gutter;
+      padding-right: #{$gutter * 2};
+    }
+  }
 
   .container {
-    border-right: $border;
-    padding: $gutter;
-    padding-right: #{$gutter * 2};
+    display: flex;
+    padding: $padding;
+    > div {
+      margin-right: $margin;
+    }
   }
+}
+
+.badge {
+  border: 1px solid green;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  margin-right: 1rem;
+  display: inline-block;
 }
