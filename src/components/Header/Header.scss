@@ -1,0 +1,11 @@
+.header {
+  border: $border;
+  display: flex;
+  font-weight: bolder;
+
+  .container {
+    border-right: $border;
+    padding: $gutter;
+    padding-right: #{$gutter * 2};
+  }
+}

@@ -1,5 +1,10 @@
 import React from "react";
+import Header from "../components/Header";
 
-export const App = () => <h1> Begin</h1>;
+export const App = () => (
+  <>
+    <Header></Header>
+  </>
+);
 
 export default App;

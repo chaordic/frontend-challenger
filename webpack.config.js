@@ -40,7 +40,10 @@ module.exports = {
             }
           },
           {
-            loader: "sass-loader"
+            loader: "sass-loader",
+            options: {
+              prependData: '@import "src/variables.scss";'
+            }
           }
         ]
       }
