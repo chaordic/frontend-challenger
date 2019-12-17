@@ -1,12 +1,14 @@
 import { combineReducers } from "redux";
 
-const initialState = {};
+const initialState = {
+  data: require("../../pedido.json")
+};
 
-const redux = (state = initialState, action) => {
+const pedido = (state = initialState, action) => {
   switch (action.type) {
     default:
       return state;
   }
 };
 
-export default combineReducers({ redux });
+export default combineReducers({ pedido });
