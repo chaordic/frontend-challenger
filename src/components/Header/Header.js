@@ -2,6 +2,9 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import styles from "./Header.scss";
+import Value from "../Value";
+import Badge from "../Badge";
+import Status from "../Status";
 
 export const Header = ({ id, status, fulfillments }) => (
   <header className={styles.header}>
@@ -9,23 +12,17 @@ export const Header = ({ id, status, fulfillments }) => (
       <div className={styles.item}>Tratamento de entregas</div>
     </div>
     <div className={styles.container}>
-      <div>
-        Pedido
-        <br />
-        {id}
-      </div>
-      <div>
-        Status do pedido
-        <br />
-        {status}
-      </div>
-      <div>
-        Entregas relacionadas
-        <br />
+      <Value label="Pedido">{id}</Value>
+      <Value label="Status do pedido">
+        <Status>{status}</Status>
+      </Value>
+      <Value label="Entregas relacionadas">
         {Object.keys(fulfillments).map(fulfillment => (
-          <span className={styles.badge}>{fulfillment}</span>
+          <Badge className={styles.badge} key={fulfillment}>
+            {fulfillment}
+          </Badge>
         ))}
-      </div>
+      </Value>
     </div>
   </header>
 );
