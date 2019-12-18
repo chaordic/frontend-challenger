@@ -1,0 +1,12 @@
+.main {
+  padding: $padding;
+
+  .client-data {
+    flex: 1;
+    margin-right: $gutter;
+  }
+
+  .payment-details {
+    width: 560px;
+  }
+}

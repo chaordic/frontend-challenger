@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import styles from "./Header.scss";
 import Value from "../Value";
 import Badge from "../Badge";
+import Flex from "../Flex";
 import Status from "../Status";
 
 export const Header = ({ id, status, fulfillments }) => (
@@ -11,19 +12,21 @@ export const Header = ({ id, status, fulfillments }) => (
     <div className={styles.breadcrumb}>
       <div className={styles.item}>Tratamento de entregas</div>
     </div>
-    <div className={styles.container}>
-      <Value label="Pedido">{id}</Value>
-      <Value label="Status do pedido">
+    <Flex className={styles.flex}>
+      <Value className={styles["flex-item"]} label="Pedido">
+        {id}
+      </Value>
+      <Value className={styles["flex-item"]} label="Status do pedido">
         <Status>{status}</Status>
       </Value>
-      <Value label="Entregas relacionadas">
+      <Value className={styles["flex-item"]} label="Entregas relacionadas">
         {Object.keys(fulfillments).map(fulfillment => (
           <Badge className={styles.badge} key={fulfillment}>
             {fulfillment}
           </Badge>
         ))}
       </Value>
-    </div>
+    </Flex>
   </header>
 );
 

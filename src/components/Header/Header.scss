@@ -15,11 +15,11 @@
     margin-right: 0.5em;
   }
 
-  .container {
-    display: flex;
-    padding: $padding;
-    > div {
-      margin-right: $margin;
+  .flex {
+    padding: 0 $gutter;
+
+    .flex-item {
+      margin-right: $gutter;
     }
   }
 }

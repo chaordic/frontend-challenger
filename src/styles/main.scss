@@ -11,6 +11,7 @@
     color: $text-color;
     font-family: $font-family;
     font-size: $font-size-base;
+    font-weight: 300;
     height: 100%;
     margin: 0;
     min-height: 100%;
@@ -20,5 +21,16 @@
   #app {
     display: flex;
     flex-direction: column;
+  }
+
+  section {
+    h1 {
+      font-size: 22px;
+      margin-top: 0;
+    }
+  }
+
+  b {
+    font-weight: 500;
   }
 }
