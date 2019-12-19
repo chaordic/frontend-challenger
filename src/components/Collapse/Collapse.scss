@@ -20,11 +20,12 @@
     background: #f6f6f6;
     color: #d8d8d8;
     position: relative;
-    width: 3rem;
+    width: 4rem;
     margin-right: $padding;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-right: $border;
 
     &::after {
       @include square(10px);
