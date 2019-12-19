@@ -4,6 +4,7 @@ import styles from "./App.scss";
 import Header from "../components/Header";
 import Flex from "../components/Flex";
 import ClientData from "../components/business/ClientData";
+import PaymentDetails from "../components/business/PaymentDetails";
 
 export const App = () => (
   <>
@@ -11,7 +12,7 @@ export const App = () => (
     <main className={styles.main}>
       <Flex>
         <ClientData className={styles["client-data"]}></ClientData>
-        <ClientData className={styles["payment-details"]}></ClientData>
+        <PaymentDetails className={styles["payment-details"]}></PaymentDetails>
       </Flex>
     </main>
   </>

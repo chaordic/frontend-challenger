@@ -1,0 +1,20 @@
+.values {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total-value {
+  margin-top: 2rem;
+}
+
+.discount {
+  color: $danger;
+
+  &::before {
+    content: "-";
+  }
+}
+
+.total {
+  color: $success;
+}

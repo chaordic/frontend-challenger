@@ -23,6 +23,10 @@
     flex-direction: column;
   }
 
+  hr {
+    border: $border;
+  }
+
   section {
     h1 {
       font-size: 22px;
