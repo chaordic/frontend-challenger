@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Flex from "../components/Flex";
 import ClientData from "../components/business/ClientData";
 import PaymentDetails from "../components/business/PaymentDetails";
+import OrderData from "../components/business/OrderData";
 
 export const App = () => (
   <>
@@ -14,6 +15,7 @@ export const App = () => (
         <ClientData className={styles["client-data"]}></ClientData>
         <PaymentDetails className={styles["payment-details"]}></PaymentDetails>
       </Flex>
+      <OrderData className={styles.section}></OrderData>
     </main>
   </>
 );
