@@ -1,7 +1,9 @@
 import { combineReducers } from "redux";
 
 const initialState = {
-  data: require("../../pedido.json")
+  data: require("../../pedido.json"),
+  isError: false,
+  isLoading: false
 };
 
 const pedido = (state = initialState, action) => {
