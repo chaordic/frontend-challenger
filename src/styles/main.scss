@@ -28,10 +28,14 @@
   }
 
   section {
-    h1 {
-      font-size: 22px;
+    > h1 {
       margin-top: 0;
     }
+  }
+
+  h1,
+  h2 {
+    font-size: 22px;
   }
 
   b {

@@ -1,0 +1,49 @@
+.collapse {
+  background: #fff;
+  border: $border;
+  border-radius: $border-radius;
+  box-shadow: 0 0 2px;
+  display: inline-block;
+
+  width: 100%;
+}
+
+.header {
+  border-bottom: $border;
+
+  .content {
+    display: flex;
+    padding: $padding 0;
+  }
+
+  .button {
+    background: #f6f6f6;
+    color: #d8d8d8;
+    position: relative;
+    width: 3rem;
+    margin-right: $padding;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::after {
+      @include square(10px);
+      border: solid $border-color;
+      border-width: 0 4px 4px 0;
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+
+      transform: rotate(-135deg);
+      -webkit-transform: rotate(-135deg);
+    }
+  }
+}
+
+.content {
+  padding: $padding;
+
+  h2 {
+    margin: 0;
+  }
+}

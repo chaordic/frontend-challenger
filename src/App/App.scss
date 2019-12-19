@@ -9,9 +9,19 @@
   .payment-details {
     width: 560px;
   }
-  
-  .section{
-    width: 100%;
+
+  .section {
     margin-top: 1rem;
+    width: 100%;
+  }
+
+  .success {
+    color: $success;
+  }
+
+  .collapse {
+    flex: auto;
+    margin-right: $margin;
+    padding: 0;
   }
 }
