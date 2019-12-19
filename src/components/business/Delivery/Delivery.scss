@@ -1,7 +1,15 @@
+.collapse {
+  flex: auto;
+  margin-right: $margin;
+  padding: 0;
+}
 
-  .collapse {
-    flex: auto;
-    margin-right: $margin;
-    padding: 0;
-  }
-  
+.xpto {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+
+.estimated-date {
+  flex: 2;
+}
