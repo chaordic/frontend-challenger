@@ -23,7 +23,7 @@ export const Header = ({ id, status, fulfillments }) => (
         <Status>{status}</Status>
       </Value>
       <Value className={styles["flex-item"]} label="Entregas relacionadas">
-        {Object.keys(fulfillments).map(fulfillment => (
+        {fulfillments.map(fulfillment => (
           <Badge className={styles.badge} key={fulfillment}>
             {fulfillment}
           </Badge>
@@ -36,14 +36,20 @@ export const Header = ({ id, status, fulfillments }) => (
 Header.propTypes = {
   id: PropTypes.string,
   status: PropTypes.string,
-  fulfillments: PropTypes.string
+  fulfillments: PropTypes.arrayOf(PropTypes.string)
 };
 
 Header.defaultProps = {
-  fulfillments: {}
+  fulfillments: []
 };
 
 export default () => {
-  const { data } = useSelector(({ pedido }) => pedido);
-  return withContent(Header)(data);
+  const { data = {} } = useSelector(({ pedido }) => pedido);
+  const { id, status, fulfillments = [] } = data;
+
+  return withContent(Header)({
+    id,
+    status,
+    fulfillments: Object.keys(fulfillments)
+  });
 };

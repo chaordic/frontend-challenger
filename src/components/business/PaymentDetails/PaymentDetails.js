@@ -62,15 +62,24 @@ PaymentDetails.propTypes = {
   freightCosts: PropTypes.number,
   discount: PropTypes.number,
   total: PropTypes.number,
-  payments: PropTypes.string
+  payments: PropTypes.arrayOf(
+    PropTypes.shape({
+      brand: PropTypes.string,
+      amount: PropTypes.number,
+      installments: PropTypes.string,
+      expiresAt: PropTypes.string,
+      number: PropTypes.any
+    })
+  )
 };
 export default props => {
-  const { data, ...status } = useSelector(({ pedido }) => pedido);
-  const { totals } = data || {};
+  const { data = {}, ...status } = useSelector(({ pedido }) => pedido);
+  const { totals, payments } = data;
   return withCard(PaymentDetails)({
     title: "Dados do pagamento",
-    ...props,
+    payments,
     ...totals,
+    ...props,
     ...status
   });
 };

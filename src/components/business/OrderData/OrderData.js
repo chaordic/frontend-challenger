@@ -21,7 +21,7 @@ export const OrderData = ({ createdAt, pointOfSale }) => (
 );
 
 OrderData.propTypes = {
-  createdAt: PropTypes.instanceOf(Date),
+  createdAt: PropTypes.string,
   pointOfSale: PropTypes.string
 };
 

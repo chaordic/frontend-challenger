@@ -136,7 +136,7 @@ Delivery.defaultProps = {
 };
 
 Delivery.propTypes = {
-  orderId: PropTypes.number,
+  orderId: PropTypes.any,
   className: PropTypes.string,
   fulfillments: PropTypes.array
 };

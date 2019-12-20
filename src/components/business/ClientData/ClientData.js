@@ -55,7 +55,7 @@ export default props => {
     ...props,
     fullAndress,
     ...customer,
-    ...telephone,
+    telephone,
     ...status
   });
 };
