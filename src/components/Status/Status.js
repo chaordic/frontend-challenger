@@ -16,14 +16,16 @@ const Enum = {
     color: "success",
     value: "Entregue"
   },
-  PENDING_SHIP: {
+  PENDING_SHIPMENT: {
     color: "info",
     value: "Separação"
   }
 };
 
-export const Status = ({ children }) => {
-  const { color, value } = Enum[children] || Enum["default"];
+export const Status = ({ children = "" }) => {
+  const key = Array.isArray(children) ? children.join("") : children;
+  const [secondKey] = key.match(/[^_]+/);
+  const { color, value } = Enum[key] || Enum[secondKey] || Enum["default"];
   return (
     <div className={styles.content}>
       <Dot color={color} className={styles.dot}></Dot> {value}
