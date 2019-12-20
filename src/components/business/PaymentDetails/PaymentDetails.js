@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import classnames from "classnames";
 import { useSelector } from "react-redux";
 import styles from "./PaymentDetails.scss";
@@ -8,7 +9,10 @@ import withCard from "../../../hoc/withCard";
 import Value from "../../Value";
 
 export const PaymentDetails = ({
-  totals: { subtotal, freightCosts, discount, total },
+  subtotal,
+  freightCosts,
+  discount,
+  total,
   payments
 }) => (
   <>
@@ -45,12 +49,28 @@ export const PaymentDetails = ({
   </>
 );
 
+PaymentDetails.defaultProps = {
+  subtotal: 0,
+  freightCosts: 0,
+  discount: 0,
+  total: 0,
+  payments: []
+};
+
+PaymentDetails.propTypes = {
+  subtotal: PropTypes.number,
+  freightCosts: PropTypes.number,
+  discount: PropTypes.number,
+  total: PropTypes.number,
+  payments: PropTypes.string
+};
 export default props => {
   const { data, ...status } = useSelector(({ pedido }) => pedido);
+  const { totals } = data || {};
   return withCard(PaymentDetails)({
     title: "Dados do pagamento",
     ...props,
-    ...data,
+    ...totals,
     ...status
   });
 };

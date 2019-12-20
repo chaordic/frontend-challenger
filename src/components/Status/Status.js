@@ -22,15 +22,20 @@ const Enum = {
   }
 };
 
-export const Status = ({ children = "" }) => {
+export const Status = ({ children }) => {
+  window.children = children;
   const key = Array.isArray(children) ? children.join("") : children;
-  const [secondKey] = key.match(/[^_]+/);
+  const [secondKey] = key.match(/[^_]+/) || "";
   const { color, value } = Enum[key] || Enum[secondKey] || Enum["default"];
   return (
     <div className={styles.content}>
       <Dot color={color} className={styles.dot}></Dot> {value}
     </div>
   );
+};
+
+Status.defaultProps = {
+  children: ""
 };
 
 export default Status;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import styles from "./Delivery.scss";
 import stylesItem from "./Item.scss";
@@ -130,17 +131,24 @@ export const Delivery = ({ orderId, className, fulfillments }) =>
     }
   );
 
+Delivery.defaultProps = {
+  fulfillments: []
+};
+
+Delivery.propTypes = {
+  orderId: PropTypes.number,
+  className: PropTypes.string,
+  fulfillments: PropTypes.array
+};
+
 export default props => {
-  const {
-    data: { id: orderId, className, fulfillments },
-    ...status
-  } = useSelector(({ pedido }) => pedido);
-  const fulfillmentsArray = Object.keys(fulfillments).map(
+  const { data = {}, ...status } = useSelector(({ pedido }) => pedido);
+  const { id: orderId, fulfillments } = data;
+  const fulfillmentsArray = Object.keys(fulfillments || {}).map(
     fulfillment => fulfillments[fulfillment]
   );
   return withContent(Delivery)({
     orderId,
-    className,
     fulfillments: fulfillmentsArray,
     ...props,
     ...status

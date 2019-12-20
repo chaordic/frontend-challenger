@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 
 import Value from "../../Value";
@@ -6,9 +7,11 @@ import withCard from "../../../hoc/withCard";
 import dateFormat from "../../../lib/dateFormat";
 import Flex from "../../Flex";
 
-export const ClientData = ({ createdAt, pointOfSale }) => (
+export const OrderData = ({ createdAt, pointOfSale }) => (
   <Flex>
-    <Value label="Comprado em">{dateFormat(createdAt, true)}</Value>
+    <Value label="Comprado em">
+      {createdAt && dateFormat(createdAt, true)}
+    </Value>
     <Value label="Ponto de Venda">{pointOfSale}</Value>
     <Value label="Modalidade de Entrega">
       F1 Envio pela loja, F2 Retira em Loja
@@ -17,9 +20,14 @@ export const ClientData = ({ createdAt, pointOfSale }) => (
   </Flex>
 );
 
+OrderData.propTypes = {
+  createdAt: PropTypes.instanceOf(Date),
+  pointOfSale: PropTypes.string
+};
+
 export default props => {
   const { data, ...status } = useSelector(({ pedido }) => pedido);
-  return withCard(ClientData)({
+  return withCard(OrderData)({
     title: "Dados do Pedido",
     ...props,
     ...data,

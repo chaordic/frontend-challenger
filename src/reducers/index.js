@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 
 const initialState = {
-  data: require("../../pedido.json"),
+  data: {},
   isError: false,
   isLoading: false
 };

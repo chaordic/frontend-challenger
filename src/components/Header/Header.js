@@ -1,5 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
+
+import withContent from "../../hoc/withContent";
 
 import styles from "./Header.scss";
 import Value from "../Value";
@@ -30,7 +33,17 @@ export const Header = ({ id, status, fulfillments }) => (
   </header>
 );
 
+Header.propTypes = {
+  id: PropTypes.string,
+  status: PropTypes.string,
+  fulfillments: PropTypes.string
+};
+
+Header.defaultProps = {
+  fulfillments: {}
+};
+
 export default () => {
   const { data } = useSelector(({ pedido }) => pedido);
-  return Header(data);
+  return withContent(Header)(data);
 };
