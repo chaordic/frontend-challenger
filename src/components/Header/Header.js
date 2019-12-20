@@ -44,7 +44,7 @@ Header.defaultProps = {
 };
 
 export default () => {
-  const { data = {} } = useSelector(({ pedido }) => pedido);
+  const { data = {} } = useSelector(({ delivery }) => delivery);
   const { id, status, fulfillments = [] } = data;
 
   return withContent(Header)({

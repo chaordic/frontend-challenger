@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import styles from "./App.scss";
 import Header from "../components/Header";
@@ -8,6 +8,7 @@ import PaymentDetails from "../components/business/PaymentDetails";
 import OrderData from "../components/business/OrderData";
 import Delivery from "../components/business/Delivery";
 
+import actionDelivery from "../actions/delivery.js";
 export const App = () => (
   <>
     <Header></Header>
@@ -21,5 +22,13 @@ export const App = () => (
     </main>
   </>
 );
+export default () => {
+  const { clear, find } = actionDelivery();
 
-export default App;
+  useEffect(() => {
+    find();
+    return clear;
+  }, []);
+
+  return App();
+};

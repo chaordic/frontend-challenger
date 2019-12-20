@@ -142,7 +142,7 @@ Delivery.propTypes = {
 };
 
 export default props => {
-  const { data = {}, ...status } = useSelector(({ pedido }) => pedido);
+  const { data = {}, ...status } = useSelector(({ delivery }) => delivery);
   const { id: orderId, fulfillments } = data;
   const fulfillmentsArray = Object.keys(fulfillments || {}).map(
     fulfillment => fulfillments[fulfillment]

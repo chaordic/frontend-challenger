@@ -42,7 +42,7 @@ ClientData.propTypes = {
 };
 
 export default props => {
-  const { data, ...status } = useSelector(({ pedido }) => pedido);
+  const { data, ...status } = useSelector(({ delivery }) => delivery);
   const { billingAddress, customer } = data;
   const telephone = customer && customer.telephone && customer.telephone.number;
   const { zip, city, state, number, address1 } = billingAddress || {};

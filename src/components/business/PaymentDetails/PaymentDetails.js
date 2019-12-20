@@ -73,7 +73,7 @@ PaymentDetails.propTypes = {
   )
 };
 export default props => {
-  const { data = {}, ...status } = useSelector(({ pedido }) => pedido);
+  const { data = {}, ...status } = useSelector(({ delivery }) => delivery);
   const { totals, payments } = data;
   return withCard(PaymentDetails)({
     title: "Dados do pagamento",

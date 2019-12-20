@@ -26,9 +26,9 @@ OrderData.propTypes = {
 };
 
 export default props => {
-  const { data, ...status } = useSelector(({ pedido }) => pedido);
+  const { data, ...status } = useSelector(({ delivery }) => delivery);
   return withCard(OrderData)({
-    title: "Dados do Pedido",
+    title: "Dados do pedido",
     ...props,
     ...data,
     ...status
