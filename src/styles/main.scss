@@ -42,4 +42,33 @@
   b {
     font-weight: 500;
   }
+
+  table {
+    border-spacing: 0;
+
+    th {
+      background: $bg;
+      color: $text-muted;
+      font-weight: normal;
+      text-align: left;
+
+      &:first-child {
+        border-top-left-radius: 20px;
+      }
+
+      &:last-child {
+        border-top-right-radius: 20px;
+      }
+    }
+
+    td,
+    th {
+      padding: $padding;
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) {
+      background: #f8f8f8;
+    }
+  }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import Flex from "../../Flex";
 
-import styles from "./Delivery.scss";
+import styles from "./Item.scss";
 import moneyFormat from "../../../lib/moneyFormat";
 
 export const Item = ({
@@ -33,7 +33,7 @@ export const Item = ({
       </td>
       <td>{sku}</td>
       <td className={styles.center}>{quantity}</td>
-      <td className={styles.qwerty}>
+      <td className={styles.price}>
         <p className={styles.values}>
           <span>Subtotal</span>
           <span>{moneyFormat(price)}</span>

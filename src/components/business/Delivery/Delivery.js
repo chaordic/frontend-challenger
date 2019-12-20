@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import styles from "./Delivery.scss";
+import stylesItem from "./Item.scss";
 
 import withContent from "../../../hoc/withContent";
 
@@ -59,7 +60,7 @@ export const Delivery = ({ orderId, className, fulfillments }) =>
               {dateFormat(freightCosts.deliveryEstimatedDate)}
               {/* TODO: Validar  Data Previsão Cliente */}
             </Value>
-            <Value label="Endereço de Entrega" className={styles.xpto2}>
+            <Value label="Endereço de Entrega" className={styles.andress}>
               {shipment.address1}, {shipment.number} {shipment.city} -{" "}
               {shipment.state}
               <br />
@@ -67,7 +68,7 @@ export const Delivery = ({ orderId, className, fulfillments }) =>
             </Value>
           </Flex>
           <Flex>
-            <div className={styles.xpto}>
+            <div className={styles.company}>
               <Value label="Transportadora">SISTEMAS S.A</Value>
               <Value label="Tipo">{type}</Value>
             </div>
@@ -102,20 +103,20 @@ export const Delivery = ({ orderId, className, fulfillments }) =>
               ))}
               <tr>
                 <td colSpan="3"></td>
-                <td className={styles.qwerty}>
-                  <p className={styles.units}>
+                <td className={stylesItem.price}>
+                  <p className={stylesItem.units}>
                     {allItems} unidades de {itemsLength} itens
                   </p>
-                  <p className={styles.values}>
+                  <p className={stylesItem.values}>
                     <span>Subtotal</span>
                     <span>{moneyFormat(subtotal)}</span>
                   </p>
-                  <p className={styles.values}>
+                  <p className={stylesItem.values}>
                     <span>Frete</span>
                     <span>{moneyFormat(freightCosts.totalPrice)}</span>
                   </p>
-                  <div className={styles.second}>
-                    <p className={styles.values}>
+                  <div className={stylesItem.second}>
+                    <p className={stylesItem.values}>
                       <span>Valor total</span>
                       <span>{moneyFormat(total)}</span>
                     </p>

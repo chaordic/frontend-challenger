@@ -1,0 +1,38 @@
+.price {
+  background: #fffcfc;
+  border-bottom: $border;
+
+  .values {
+    display: flex;
+    justify-content: space-between;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .second {
+    margin-block-start: 3em;
+
+    p:last-child {
+      margin-block-end: 0;
+    }
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.product-name {
+  margin: auto $padding;
+}
+
+.thumbnail {
+  @include square(80px);
+  background: $body-bg;
+  border: $border;
+  border-radius: $border-radius;
+  display: inline-block;
+  overflow: hidden;
+}
