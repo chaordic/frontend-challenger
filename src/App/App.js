@@ -10,13 +10,13 @@ import Delivery from "../components/business/Delivery";
 
 export const App = () => (
   <>
-    <Header></Header>
+    {/* <Header></Header> */}
     <main className={styles.main}>
-      <Flex>
+      {/* <Flex>
         <ClientData className={styles["client-data"]}></ClientData>
         <PaymentDetails className={styles["payment-details"]}></PaymentDetails>
       </Flex>
-      <OrderData className={styles.section}></OrderData>
+      <OrderData className={styles.section}></OrderData> */}
       <Delivery className={styles.section}></Delivery>
     </main>
   </>

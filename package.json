@@ -10,7 +10,8 @@
     "prestart": "npm i && npm run build",
     "start": "node server",
     "build": "webpack --mode production",
-    "test": "jest"
+    "test": "jest",
+    "lint-staged": "lint-staged"
   },
   "husky": {
     "hooks": {
