@@ -16,9 +16,19 @@ import Status from "../../Status";
 
 export const Delivery = ({ id, className, fulfillments }) =>
   Object.keys(fulfillments).map((fulfillment, key) => {
-    const { shipment, locationType, freightCosts, type } = fulfillments[
+    const { shipment, locationType, freightCosts, type, items } = fulfillments[
       fulfillment
     ];
+    const itemsLength = Object.keys(items).length;
+    const allItems = Object.keys(items).reduce(
+      (sum, itemName) => sum + items[itemName]["quantity"],
+      0
+    );
+    const subtotal = Object.keys(items).reduce(
+      (sum, itemName) => sum + items[itemName]["price"],
+      0
+    );
+    const total = subtotal + freightCosts.totalPrice;
     return (
       <Collapse
         key={key}
@@ -46,7 +56,7 @@ export const Delivery = ({ id, className, fulfillments }) =>
             {dateFormat(freightCosts.deliveryEstimatedDate)}
             {/* TODO: Validar  Data Previsão Cliente */}
           </Value>
-          <Value label="Endereço de Entrega">
+          <Value label="Endereço de Entrega" className={styles.xpto2}>
             {shipment.address1}, {shipment.number} {shipment.city} -{" "}
             {shipment.state}
             <br />
@@ -68,6 +78,95 @@ export const Delivery = ({ id, className, fulfillments }) =>
             {dateFormat(freightCosts.deliveryEstimatedDate)}
           </Value>
         </Flex>
+        <hr />
+        <h2>Detalhes da Entrega</h2>
+        <table className={styles["product-list"]}>
+          <thead>
+            <tr>
+              <th>PRODUTO</th>
+              <th>SKU</th>
+              <th className={styles.center}>QTD.</th>
+              <th>PREÇO</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.keys(items).map((itemName, key) => {
+              const {
+                sku,
+                quantity,
+                stockType,
+                name,
+                size,
+                color,
+                image,
+                acquisitionType,
+                price
+              } = items[itemName];
+              const possibleFreightCosts =
+                freightCosts.totalPrice / itemsLength;
+              const totalValue = price * itemsLength + possibleFreightCosts;
+              return (
+                <tr>
+                  <td>
+                    <Flex>
+                      <img
+                        src={image}
+                        alt={`Foto do ${name}`}
+                        className={styles.thumbnail}
+                      />
+                      <div className={styles["product-name"]}>
+                        {name}
+                        <br />
+                        {color},{size}
+                      </div>
+                    </Flex>
+                  </td>
+                  <td>{sku}</td>
+                  <td className={styles.center}>{quantity}</td>
+                  <td className={styles.qwerty}>
+                    <p className={styles.values}>
+                      <span>Subtotal</span>
+                      <span>{moneyFormat(price)}</span>
+                    </p>
+                    <div className={styles.second}>
+                      <p className={styles.values}>
+                        <span>Frete</span>{" "}
+                        <span>{moneyFormat(possibleFreightCosts)}</span>
+                      </p>
+                      <p className={styles.values}>
+                        <span>Valor total</span>
+                        <span>{moneyFormat(totalValue)}</span>
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
+
+            <tr>
+              <td colspan="3"></td>
+              <td className={styles.qwerty}>
+                <p className={styles.units}>
+                  {allItems} unidades de {itemsLength} itens
+                </p>
+                <p className={styles.values}>
+                  <span>Subtotal</span>
+                  <span>{moneyFormat(subtotal)}</span>
+                </p>
+                <p className={styles.values}>
+                  <span>Frete</span>
+                  <span>{moneyFormat(freightCosts.totalPrice)}</span>
+                </p>
+                <div className={styles.second}>
+                  <p className={styles.values}>
+                    <span>Valor total</span>
+                    <span>{moneyFormat(total)}</span>
+                  </p>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </Collapse>
     );
   });

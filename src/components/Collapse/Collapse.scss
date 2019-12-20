@@ -1,5 +1,5 @@
 .collapse {
-  background: #fff;
+  background: $body-bg;
   border: $border;
   border-radius: $border-radius;
   box-shadow: 0 0 2px;
@@ -17,8 +17,7 @@
   }
 
   .button {
-    background: #f6f6f6;
-    color: #d8d8d8;
+    background: $bg;
     position: relative;
     width: 4rem;
     margin-right: $padding;
@@ -44,7 +43,7 @@
 .content {
   padding: $padding;
 
-  h2 {
+  > h2:first-child {
     margin: 0;
   }
 }
