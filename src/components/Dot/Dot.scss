@@ -1,0 +1,14 @@
+.dot {
+  @include square($font-size-base);
+
+  background: $success;
+  border: 2px solid rgba($color: #000, $alpha: $darken);
+  border-radius: 50%;
+  display: inline-block;
+
+  @each $name, $color in $colors {
+    &.#{$name} {
+      background: $color;
+    }
+  }
+}

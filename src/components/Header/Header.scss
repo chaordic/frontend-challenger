@@ -1,0 +1,25 @@
+.header {
+  .breadcrumb {
+    border: $border;
+    display: flex;
+    font-weight: bolder;
+
+    .item {
+      border-right: $border;
+      padding: $gutter;
+      padding-right: #{$gutter * 2};
+    }
+  }
+
+  .badge {
+    margin-right: 0.5em;
+  }
+
+  .flex {
+    padding: 0 $gutter;
+
+    .flex-item {
+      margin-right: $gutter;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.content {
+  display: block;
+  flex: 1;
+  padding-top: $padding;
+
+  .label {
+    color: $text-muted;
+    margin-bottom: 0.5rem;
+  }
+
+  @each $name, $color in $colors {
+    &.#{$name} .label {
+      color: $color;
+    }
+  }
+}

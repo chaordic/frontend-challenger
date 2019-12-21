@@ -1,0 +1,31 @@
+.collapse {
+  flex: auto;
+  margin-right: $margin;
+  padding: 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.company {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+
+  > div {
+    padding-right: 20px;
+  }
+}
+
+.andress {
+  flex: 2;
+}
+
+.estimated-date {
+  flex: 3;
+}
+
+.product-list {
+  width: 100%;
+}
