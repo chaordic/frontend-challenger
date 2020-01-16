@@ -3,3 +3,26 @@
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.container{
+    width: 93vw;
+    margin: auto;
+}
+
+.box-dados{
+    display: flex;
+    justify-content: space-between;
+}
+
+.dados{
+    display: flex;
+    justify-content: space-between;
+
+    .valor-desconto{
+        color: red;
+    }
+
+    .valor-total{
+        color: green;
+    }
+}

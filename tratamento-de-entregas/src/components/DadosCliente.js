@@ -16,6 +16,7 @@ const DadosCliente = () => {
             <br></br>
             <p>Endereço de Entrega</p>
             <p>Rua Oscar Freire, 333 São Paulo - SP - 00000-000</p>
+            <br></br>
         </div>
     )
 }

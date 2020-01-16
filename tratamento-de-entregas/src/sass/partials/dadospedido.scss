@@ -1,0 +1,30 @@
+.dados-pedido{
+
+    width: 87vw;
+    margin-top: 2vw;
+    border: solid 1px gray;
+    border-radius: 5px;
+
+    padding: {
+        top: 2%;
+        bottom: 1%;
+        left: 3%;
+        right: 3%;
+    }
+    
+    margin: {
+        left: 3%;
+    }
+
+    .title{
+        color: gray;
+    }
+
+    .menu{
+        padding: 1vw;
+        width: 55vw;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 0;
+    }
+}
