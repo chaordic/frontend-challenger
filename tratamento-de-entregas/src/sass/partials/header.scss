@@ -1,0 +1,64 @@
+.header {
+    .title{
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+        border-right: solid 1px gray;
+        width: 15vw;
+    }
+    hr{
+        position: absolute;
+        width: 100vw;
+        left: 0;
+        color: gray;
+    }
+    .menu{
+        padding: 1vw;
+        width: 40vw;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 0;
+
+        strong{
+            color: gray;
+        }
+
+        span{
+            width: 18px;
+            height: 18px;
+            background-color: $status-pendent;
+            position: absolute;
+            border-radius: 50%;
+            margin-left: 5px;
+
+            
+            p{
+                padding-left: 2vw;
+            }
+        }
+
+        .entregas-relacionadas{
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;            
+        }
+
+        p{
+            padding-right: 2vw;
+            padding: .3vw;
+        }
+
+        .box-entrega{
+            border: solid 1px green;
+            color: green;
+            margin-right: .5vw;
+            border-radius: 10%;
+            padding: {
+                top: .3vw;
+                bottom: .3vw;
+                left: .5vw;
+                right: .5vw;
+            };
+        }
+    }
+    
+}
