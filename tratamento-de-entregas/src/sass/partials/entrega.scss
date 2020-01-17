@@ -1,0 +1,70 @@
+.entrega{
+
+    width: 87vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    border: solid 1px gray;
+    border-radius: 5px;
+    display: flex;
+
+    padding: {
+        right: 6%;
+    }
+    
+    margin: {
+        left: 3%;
+    }
+
+    p{
+        padding-right: 2vw;
+        padding: .3vw;
+        padding-top: .1vw;
+        
+    }
+
+    .pedido, .status{
+        padding-top: 1vw;
+    }
+
+    button{
+        width: 5vw;
+        height: 5vw;
+
+        span{
+            background: none;
+            position: relative;
+            padding-top: .8vw;
+            &:before{
+                // margin-top: .8vw;
+                font-size: 3vw;
+                content: '\2304';
+            }
+
+            p{
+                padding-top: .1vw;
+            }
+        }
+    }
+
+    .menu{
+        display: flex;
+        justify-content: space-between;
+        width: 40vw;
+    }
+
+    span{
+        width: 18px;
+        height: 18px;
+        background-color: $status-pendent;
+        position: absolute;
+        border-radius: 50%;
+        // margin-left: 5px;
+        
+
+    
+        p{
+            padding-left: 2vw;
+            padding-top: .1vw;
+        }
+    }
+}
