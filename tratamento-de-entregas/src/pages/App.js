@@ -5,6 +5,8 @@ import DadosPagamento from '../components/DadosPagamento';
 import DadosPedido from '../components/DadosPedido';
 import Entrega from '../components/Entrega';
 import DadosProduto from '../components/DadosProduto';
+import Table from '../components/Table';
+import DadosEntrega from '../components/DadosEntrega';
 
 const App = () => {
   return (
@@ -16,8 +18,10 @@ const App = () => {
       </div>
       <DadosPedido />
       <Entrega />
+
+      <DadosEntrega />
       <Entrega />
-      <DadosProduto />
+      
     </div>
   );
 }

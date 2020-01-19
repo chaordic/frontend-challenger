@@ -1,0 +1,38 @@
+.dados-entrega {
+  background-color: white;
+  width: 91vw;
+  margin-bottom: 1vw;
+  border: solid 1px gray;
+  padding: 1vw;
+
+  h2 {
+    color: gray;
+  }
+  .show-dados {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .info-entrega{
+        width: auto;
+        padding: {
+            top: 1vw;
+            bottom: 1vw;
+            left: 0vw;
+            right: 2vw;
+        };
+        margin: {
+            top: 2vw;
+            bottom: 2vw;
+            left: 0vw;
+            right: 4vw;
+        };
+    }
+  }
+
+  p {
+    padding-right: 2vw;
+    padding: 0.3vw;
+    padding-top: 0.1vw;
+  }
+}

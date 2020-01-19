@@ -30,3 +30,28 @@
 .status-circle{
     background-color: red;
 }
+.App{
+    background-color: red;
+}
+
+.produto {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 30vw;
+    height: auto;
+
+    .nome-e-foto {
+      padding: 1vw;
+    }
+  }
+
+  .sku {
+    width: 10vw;
+  }
+  .qtd {
+    width: 10vw;
+  }
+  .preco {
+    width: 20vw;
+  }
