@@ -1,6 +1,7 @@
 import React from 'react';
 import Table from './Table';
 import DadosProduto from './DadosProduto';
+import ValorTotal from './ValorTotal';
 
 const DadosEntrega = () => {
     return (
@@ -50,6 +51,8 @@ const DadosEntrega = () => {
 
             <Table />
             <DadosProduto />
+            <DadosProduto />
+            <ValorTotal/>
         </div>
     )
 }

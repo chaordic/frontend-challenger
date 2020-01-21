@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DadosCliente = () => {
+const DadosCliente = (lista) => {
     return (
         <div className="dados-cliente container">
             <p><strong>Dados do Cliente</strong></p>

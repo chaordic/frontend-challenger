@@ -1,0 +1,11 @@
+.valor-total{
+    display: flex;
+    justify-content: flex-end;
+
+    .subtotal{
+        background-color: gray;
+        width: 18vw;
+        padding: 1vw;
+        border-bottom: solid 1px black;
+    }
+}
