@@ -1,0 +1,17 @@
+.table {
+  width: 89vw;
+  background-color: $ligth-gray;
+  padding: 1vw;
+  border-radius: 10px 10px 0px 0px;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      color: $gray-title;
+      text-transform: uppercase;
+      list-style: none;
+    }
+  }
+}
